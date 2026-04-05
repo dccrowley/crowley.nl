@@ -1,0 +1,27 @@
+name: Deploy to crowley.nl
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via rsync
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p 22 ftp.crowley.nl >> ~/.ssh/known_hosts
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p 22" \
+            ./ \
+            crowleynl@ftp.crowley.nl:/srv/home/crowleynl/domains/crowley.nl/htdocs/www/ \
+            --exclude='.git' \
+            --exclude='.github'
