@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Built an AI Chief of Staff Using Claude Code — Don Crowley</title>
+<meta name="description" content="I stopped using ChatGPT and built an AI Chief of Staff with memory, commands, and context. Here is why AI infrastructure beats better prompting.">
+<link rel="canonical" href="https://crowley.nl/blog/ai-chief-of-staff.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How I Built an AI Chief of Staff Using Claude Code","description":"I stopped using ChatGPT and built an AI Chief of Staff with memory, commands, and context. Here is why AI infrastructure beats better prompting.","author":{"@type":"Person","name":"Don Crowley","url":"https://crowley.nl","jobTitle":"Head of Design","worksFor":{"@type":"Organization","name":"Alef Education"}},"datePublished":"2026-03-01","publisher":{"@type":"Person","name":"Don Crowley"},"url":"https://crowley.nl/blog/ai-chief-of-staff.html","mainEntityOfPage":"https://crowley.nl/blog/ai-chief-of-staff.html","keywords":["Claude Code","AI Chief of Staff","AI productivity system","AI for design leaders","AI workflow automation"]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--serif:'IBM Plex Serif',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;--orange:#CC5500;--orange-light:#FFF8F3;--navy:#2C3E50;--text-dark:#1a1a1a;--text-mid:#444;--text-light:#666;--text-muted:#999;--bg:#ffffff;--bg-off:#fafaf9;--border:#e8e2dc;--max-width:720px}
+html{font-size:17px;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.top-bar{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.top-bar a{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--navy);text-decoration:none;transition:color .2s}
+.top-bar a:hover{color:var(--orange)}
+.top-bar nav a{font-family:var(--sans);font-size:.9rem;font-weight:500;margin-left:2rem}
+.blog-layout{max-width:960px;margin:0 auto;padding:3.5rem 1.5rem 6rem;display:grid;grid-template-columns:1fr 240px;gap:3rem}
+.blog-main{max-width:var(--max-width)}
+.blog-sidebar{padding-top:.5rem}
+.blog-sidebar h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:1rem}
+.blog-sidebar ul{list-style:none;padding:0}
+.blog-sidebar li{margin-bottom:1rem}
+.blog-sidebar li a{font-size:.9rem;color:var(--text-mid);text-decoration:none;line-height:1.4;display:block;transition:color .2s}
+.blog-sidebar li a:hover{color:var(--orange)}
+.blog-sidebar li.active a{color:var(--orange);font-weight:500}
+.blog-sidebar .sidebar-cta{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-muted);line-height:1.6}
+.blog-sidebar .sidebar-cta a{color:var(--orange)}
+article h1{font-family:var(--serif);font-size:2.2rem;font-weight:600;line-height:1.2;margin-bottom:.75rem;letter-spacing:-.02em;color:var(--navy)}
+article .subtitle{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--text-light);line-height:1.6;margin-bottom:1.5rem}
+article .post-meta{font-size:.82rem;color:var(--text-muted);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+article h2{font-family:var(--serif);font-size:1.35rem;font-weight:600;margin-top:2.5rem;margin-bottom:.75rem;color:var(--navy)}
+article h3{font-family:var(--sans);font-size:1.05rem;font-weight:600;margin-top:2rem;margin-bottom:.5rem;color:var(--navy)}
+article p{margin-bottom:1.15rem}
+article ul,article ol{margin:0 0 1.25rem 1.5rem}
+article li{margin-bottom:.4rem}
+article strong{font-weight:600}
+.metric-inline{font-family:var(--serif);font-weight:600;color:var(--orange)}
+.pullquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.55;margin:2rem 0;padding-left:1.5rem;border-left:4px solid var(--orange);color:var(--navy)}
+.outcome-block{background:var(--orange-light);border:1px solid var(--border);padding:1.5rem 2rem;margin:2rem 0;border-radius:6px}
+.outcome-block h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.75rem;margin-top:0}
+.outcome-block p{margin-bottom:.6rem}
+.outcome-block p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+table th{text-align:left;font-weight:600;color:var(--navy);padding:.6rem .75rem;border-bottom:2px solid var(--border);font-size:.8rem}
+table td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-mid)}
+table tr:last-child td{border-bottom:none}
+.post-nav{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.85rem}
+.post-nav span{display:block;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.3rem}
+.post-nav a{color:var(--orange);text-decoration:none;font-weight:500}
+.post-nav a:hover{color:var(--navy)}
+footer{max-width:960px;margin:0 auto;padding:0 1.5rem 3rem;font-size:.8rem;color:var(--text-muted)}
+@media(max-width:768px){.blog-layout{grid-template-columns:1fr;gap:2rem}.blog-sidebar{order:2;border-top:1px solid var(--border);padding-top:2rem}}
+@media(max-width:600px){html{font-size:16px}article h1{font-size:1.8rem}.top-bar{padding:1rem 1.25rem}.top-bar nav a{margin-left:1rem;font-size:.85rem}.blog-layout{padding:2rem 1.25rem 4rem}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <a href="../index.html">Don Crowley</a>
+  <nav><a href="../index.html#work">Work</a><a href="index.html">Writing</a><a href="../index.html#contact">Contact</a></nav>
+</header>
+<div class="blog-layout">
+<main class="blog-main">
+<article>
+
+<h1>How I Built an AI Chief of Staff Using Claude Code</h1>
+<p class="subtitle">Most professionals use AI as a tool. The real unlock is building AI into your operating system.</p>
+<p class="post-meta">Don Crowley &middot; March 2026</p>
+
+<p>Last week, I stopped using the Claude app entirely.</p>
+
+<p>Not because it was not useful. It was. But I had hit a ceiling. Every conversation started from zero. No memory of past projects. No awareness of my priorities. No compounding value.</p>
+
+<p>So I built something different: an AI Chief of Staff inside Claude Code.</p>
+
+<p>Memory system. Slash commands. Custom skills. Project context. All backed up to a private GitHub repo.</p>
+
+<p>Six days ago, none of it existed. Now it is the backbone of how I work.</p>
+
+<h2>What is an AI Chief of Staff?</h2>
+
+<p>Think about what a great chief of staff does for an executive: they hold context, anticipate needs, prepare materials, catch errors, and make the leader faster without requiring constant direction.</p>
+
+<p>That is what I built, but with AI.</p>
+
+<p>The difference between using ChatGPT or Claude casually and building an AI Chief of Staff is the difference between hiring a contractor for one task versus having a trusted operator who knows your business.</p>
+
+<p>One is a tool. The other is a multiplier.</p>
+
+<h2>The results: one week in</h2>
+
+<p>Here is what my AI Chief of Staff delivered in the first week:</p>
+
+<p><strong>Presentation turnaround in under an hour.</strong> I needed to rebuild a director-level deck: repositioned narrative, updated milestones, working interactions. Previously a half-day task. Done in sixty minutes.</p>
+
+<p><strong>Video production that used to take hours.</strong> Took a 95MB raw screen recording, stripped the browser chrome, scaled to 1920x1080, sharpened the output, compressed to 10MB, and trimmed the tail. The kind of task I would normally postpone. Finished in minutes.</p>
+
+<p><strong>Error-catching I did not ask for.</strong> Before sending a newsletter, my Chief of Staff flagged two errors I had missed. Then it drafted comments in a colleague's voice for a shared doc. Unplanned value: the best kind.</p>
+
+<p><strong>Meeting prep that is actually ready.</strong> Agenda, notes, positioned presentation: all prepared before a 10am check-in. Not scrambled together five minutes before.</p>
+
+<p>None of this required complex prompting in the moment. The system already knew my context, my standards, and my priorities.</p>
+
+<h2>Why most AI users hit a ceiling</h2>
+
+<p>Here is the uncomfortable truth: most professionals are still asking AI better questions.</p>
+
+<p>That is a fine starting point. But it does not scale.</p>
+
+<p>Every time you open a new chat, you lose context. You re-explain your role, your project, your preferences. You are training the AI from scratch, again and again.</p>
+
+<div class="pullquote">The unlock is not better prompting. It is building systems around AI.</div>
+
+<p>The gap between "I use AI" and "I have built AI into how I work" is widening fast. And it is creating a new kind of professional advantage.</p>
+
+<h2>How I built it: the core components</h2>
+
+<p>For design and product leaders exploring this path, here is the architecture:</p>
+
+<h3>1. Memory system</h3>
+<p>Claude Code allows persistent memory across sessions. I have structured mine around active projects, key stakeholders, recurring tasks, and communication preferences. The AI does not just remember facts. It remembers how I work.</p>
+
+<h3>2. Slash commands</h3>
+<p>Custom commands that trigger specific workflows. <code>/meeting-prep</code> pulls context and generates an agenda. <code>/deck-review</code> analyses a presentation against my quality bar. <code>/newsletter-check</code> runs editorial review with my voice in mind.</p>
+
+<h3>3. Skills library</h3>
+<p>Modular capabilities I have taught the system: how I structure arguments, how I give feedback, how I write for different audiences. These are not prompts I paste in. They are embedded in how the AI operates.</p>
+
+<h3>4. Project context</h3>
+<p>Every active initiative has a context file: goals, constraints, stakeholders, history. When I work on something, the AI already knows the landscape.</p>
+
+<h3>5. GitHub backup</h3>
+<p>Everything syncs to a private repo. If I lose local state, I restore in seconds. The system is resilient, not fragile.</p>
+
+<h2>The mindset shift for leaders</h2>
+
+<p>If you are a design or product leader, you are already skilled at building systems: design systems, product processes, team rituals.</p>
+
+<p>AI infrastructure is the same discipline applied to your own productivity.</p>
+
+<p>The question is not "How do I prompt AI better?" It is:</p>
+
+<ul>
+<li>What workflows do I repeat weekly that could be systematised?</li>
+<li>What context do I keep re-explaining that should persist?</li>
+<li>What quality checks do I do manually that could be automated?</li>
+</ul>
+
+<p>Most leaders I talk to are still in the "AI as occasional assistant" phase. The ones pulling ahead are building AI into their operating model: not as an experiment, but as infrastructure.</p>
+
+<h2>The competitive advantage is compounding</h2>
+
+<p>Here is what I have realised: the value of an AI Chief of Staff compounds over time.</p>
+
+<p>Every project context I add makes the system smarter. Every workflow I build saves time on every future use. Every memory I store reduces friction in the next conversation.</p>
+
+<p>Three months from now, my AI Chief of Staff will know my work better than any new hire could in their first quarter. It will anticipate needs I have not articulated. It will catch patterns I have missed.</p>
+
+<p>This is not about replacing human judgement. It is about augmenting it: systematically, reliably, at scale.</p>
+
+<h2>The question for you</h2>
+
+<p>If you had a week to invest in AI infrastructure, what would you build?</p>
+
+<p>Not a clever prompt. Not a one-off automation. A system: something that compounds.</p>
+
+<p>For me, it was a Chief of Staff. For you, it might be something different: a research engine, a writing partner, a decision-support system.</p>
+
+<p>The window for building this advantage is open. It will not stay open forever.</p>
+
+</article>
+
+<div class="post-nav">
+  <span>Next article</span>
+  <a href="hiring-designers.html">Why I Stopped Trusting Job Titles When Hiring Designers &rarr;</a>
+</div>
+</main>
+<aside class="blog-sidebar">
+<h3>Articles</h3>
+<ul>
+<li class="active"><a href="ai-chief-of-staff.html">How I Built an AI Chief of Staff Using Claude Code</a></li>
+<li ><a href="hiring-designers.html">Why I Stopped Trusting Job Titles When Hiring Designers</a></li>
+<li ><a href="6-interviews-roadmap.html">How 6 User Interviews Changed a 10-Year Roadmap</a></li>
+</ul>
+<div class="sidebar-cta">
+<p>I write about design leadership, AI adoption, and building teams across cultures.</p>
+<p><a href="https://www.linkedin.com/in/doncrowley/">Follow on LinkedIn</a></p>
+</div>
+</aside>
+</div>
+<footer><p>&copy; 2026 Don Crowley. Built with care for typography and accessibility.</p></footer>
+</body>
+</html>

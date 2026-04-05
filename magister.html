@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magister: Strategic Discovery for a 2M+ User Platform — Don Crowley</title>
+<meta name="description" content="How top-task research on a 14-year-old platform unlocked a €3M+ investment and reversed a declining market position.">
+<link rel="canonical" href="https://crowley.nl/magister.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--serif:'IBM Plex Serif',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;--orange:#CC5500;--orange-light:#FFF8F3;--navy:#2C3E50;--text-dark:#1a1a1a;--text-mid:#444;--text-light:#666;--text-muted:#999;--bg:#ffffff;--bg-off:#fafaf9;--border:#e8e2dc;--max-width:720px}
+html{font-size:17px;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.top-bar{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.top-bar a{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--navy);text-decoration:none;transition:color .2s}
+.top-bar a:hover{color:var(--orange)}
+.top-bar nav a{font-family:var(--sans);font-size:.9rem;font-weight:500;margin-left:2rem}
+.container{max-width:var(--max-width);margin:0 auto;padding:3.5rem 1.5rem 6rem}
+.case-meta{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.case-meta dl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;font-size:.85rem}
+.case-meta dt{color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.25rem}
+.case-meta dd{font-weight:500;color:var(--navy);line-height:1.4}
+h1{font-family:var(--serif);font-size:2.4rem;font-weight:600;line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em;color:var(--navy)}
+.subtitle{font-size:1.15rem;color:var(--text-light);line-height:1.65;margin-bottom:3rem}
+h2{font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-top:3.5rem;margin-bottom:1rem;letter-spacing:-.01em;color:var(--navy)}
+h3{font-family:var(--sans);font-size:1.05rem;font-weight:600;margin-top:2.25rem;margin-bottom:.6rem;color:var(--navy)}
+p{margin-bottom:1.25rem}
+.metric-inline{font-family:var(--serif);font-weight:600;color:var(--orange)}
+.pullquote{font-family:var(--serif);font-size:1.25rem;font-style:italic;line-height:1.55;margin:2.5rem 0;padding-left:1.5rem;border-left:4px solid var(--orange);color:var(--navy)}
+.case-figure{margin:2.5rem -2rem;padding:0}
+.case-figure img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--border);background:var(--bg-off)}
+.case-figure figcaption{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.5;padding:0 2rem}
+.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:2.5rem -2rem}
+.image-grid img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--border);background:var(--bg-off)}
+.image-grid-caption{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.5;padding:0 2rem;grid-column:1/-1}
+.outcome-block{background:var(--orange-light);border:1px solid var(--border);padding:2rem;margin:2rem 0;border-radius:6px}
+.outcome-block h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:1rem;margin-top:0}
+.outcome-block p{margin-bottom:.75rem}
+.outcome-block p:last-child{margin-bottom:0}
+.divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+.reflection{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.reflection h2{margin-top:0}
+.reflection p{color:var(--text-mid)}
+.case-testimonial{background:var(--orange-light);border:1px solid var(--border);border-radius:6px;padding:2rem;margin:2.5rem 0}
+.case-testimonial blockquote{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--text-mid);margin-bottom:1rem}
+.case-testimonial cite{font-style:normal;font-size:.85rem;font-weight:500;color:var(--navy);display:block}
+.case-testimonial cite span{font-weight:400;color:var(--text-muted);display:block}
+.nav-next{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-size:.85rem}
+.nav-next span{display:block;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.3rem}
+.nav-next a{color:var(--orange);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-next a:hover{color:var(--navy)}
+footer{max-width:var(--max-width);margin:0 auto;padding:0 1.5rem 3rem;font-size:.8rem;color:var(--text-muted)}
+@media(max-width:600px){html{font-size:16px}h1{font-size:1.9rem}.case-meta dl{grid-template-columns:1fr;gap:.75rem}.container{padding:2.5rem 1.25rem 4rem}.case-figure{margin:2rem -.5rem}.case-figure figcaption{padding:0 .5rem}.image-grid{margin:2rem -.5rem;gap:8px}.image-grid-caption{padding:0 .5rem}.top-bar{padding:1rem 1.25rem}.top-bar nav a{margin-left:1rem;font-size:.85rem}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <a href="index.html">Don Crowley</a>
+  <nav><a href="index.html#work">Work</a><a href="blog/">Writing</a><a href="index.html#contact">Contact</a></nav>
+</header>
+<main class="container">
+
+<h1>Strategic Discovery for a 2M+ User Platform</h1>
+<p class="subtitle">How top-task research on a 14-year-old platform reversed a declining market position and unlocked a multi-million euro investment.</p>
+
+<div class="case-meta">
+  <dl>
+    <div><dt>Role</dt><dd>Senior UX Designer</dd></div>
+    <div><dt>Organisation</dt><dd>Iddink Group (Sanoma Learning)</dd></div>
+    <div><dt>Timeline</dt><dd>2018 &ndash; 2022</dd></div>
+  </dl>
+</div>
+
+<h2>The stakes</h2>
+
+<p>Magister was the dominant school administration platform in Dutch secondary education. Over two million people used it every day: students checking timetables, parents tracking grades, teachers logging attendance. At its peak, Magister held <span class="metric-inline">80% market share</span> across the Netherlands.</p>
+
+<p>But the product was built on a 14-year-old Delphi codebase, delivered as a remote desktop application. Schools were starting to demand modern, web-based alternatives. Competitors saw the gap. By the time I joined, market share had dropped to <span class="metric-inline">60%</span> and the trend was accelerating.</p>
+
+<p>The company knew something had to change. The question was what. A direct rebuild, replicating every feature in a modern stack, would take an estimated ten years. Nobody had ten years. The board had not approved a new product roadmap in three years.</p>
+
+<figure class="case-figure">
+  <img src="magister-sharp-readable.svg" alt="Magister platform interface showing the legacy desktop application" loading="lazy">
+  <figcaption>The Magister platform: a 14-year-old Delphi codebase serving 2M+ daily users across Dutch secondary education.</figcaption>
+</figure>
+
+<h2>What I did</h2>
+
+<p>I proposed top-task research as the way to cut through the complexity. The methodology is straightforward: identify the small number of tasks that account for the vast majority of usage, and focus everything on those. It sounds simple. Getting an organisation to accept that most of their features do not matter is the hard part.</p>
+
+<p>I started with six user interviews. That number raised eyebrows internally. People expected surveys with hundreds of respondents. But six carefully chosen interviews, conducted with proper task analysis methodology, revealed a pattern that no survey would have surfaced as cleanly: <span class="metric-inline">95% of daily usage</span> concentrated in just <span class="metric-inline">6 to 10 tasks</span>.</p>
+
+<p>The remaining hundreds of features, the ones that had accumulated over fourteen years of saying yes to every request, accounted for almost nothing in actual daily use.</p>
+
+<p>I verified the findings with domain experts inside the company, then mapped the top tasks against the Dutch school calendar to build a migration sequence. This was critical: schools cannot absorb a platform change mid-term. The calendar gave us natural migration windows.</p>
+
+<figure class="case-figure">
+  <img src="top-task-diagram.png" alt="Top Task Discovery diagram mapping school administration tasks across three terms of the Dutch school year. Term 1 covers setting up the school year, authorisation, student administration, and grade structure. Term 2 covers student data processing, timetabling, learning materials, and auditor preparation. Term 3 covers new student enrolment, exam configuration, and de-registration. Each task category is colour-coded: blue for authorisation, green for grades, pink for enrolment, amber for PTA, purple for timetable, teal for school structure, coral for exams, lavender for learning materials, peach for student administration, and mint for management." loading="lazy">
+  <figcaption>Top Task Discovery: mapping the tasks that account for 95% of daily usage against the Dutch school calendar. Each colour represents a task category. This artefact became the foundation of the migration roadmap.</figcaption>
+</figure>
+
+<p>With product management, I built a phased business case. Not a redesign pitch. Not a concept deck. A financially grounded argument for focused investment, with clear phases tied to school year cycles.</p>
+
+<div class="pullquote">The board did not need a redesign pitch. They needed evidence that we understood the problem well enough to solve it in stages.</div>
+
+<h2>The decisions that mattered</h2>
+
+<p>Three deliberate choices shaped the outcome.</p>
+
+<p>First, I chose depth over breadth in the research. Six interviews instead of six hundred. This was a risk. But depth revealed the usage concentration pattern that made the entire strategy possible. A broad survey would have produced averages. Averages would have preserved the status quo.</p>
+
+<p>Second, I framed the business case around what to build first, not what to build eventually. The board had been paralysed by the scale of the full migration. By showing that a small number of tasks covered nearly all daily use, I reduced a decade-long problem to a manageable first phase.</p>
+
+<p>Third, I mapped the migration to the school calendar rather than engineering sprints. This shifted the conversation from internal capacity planning to customer reality. Schools think in terms and semesters, not quarterly OKRs.</p>
+
+<h2>What happened</h2>
+
+<div class="outcome-block">
+  <h3>Results</h3>
+  <p>The board approved a three-year product roadmap, the first in three years. The approval unlocked <span class="metric-inline">&euro;3M+ in development investment</span>.</p>
+  <p>Market share stabilised after three consecutive years of decline.</p>
+  <p>Iterative delivery of the web platform began in Q4 2020.</p>
+  <p>The company&rsquo;s reputation shifted. Schools that had described Iddink as &ldquo;arrogant&rdquo; began calling them &ldquo;listeners.&rdquo; That perception change mattered as much as the product work.</p>
+</div>
+
+<div class="case-testimonial" id="testimonial-persoon">
+  <blockquote>Don came in with so much experience, yet he served the younger ones in building up strategic blocks. Really impressed with Don&rsquo;s constant push to become better in focusing on end users and what they need.</blockquote>
+  <cite>Edwin Persoon<span>Former CTO, Iddink Group</span></cite>
+</div>
+
+<div class="reflection">
+  <h2>What I learned</h2>
+  <p>This project taught me that the most powerful research findings are the ones that give leaders permission to do less. The board was not lacking ambition. They were lacking a credible way to reduce scope without feeling like they were abandoning their users.</p>
+  <p>Six interviews, properly conducted, unlocked more investment than years of feature requests. The disproportionate return was not accidental. It came from choosing the right methodology for the right problem: when everything seems important, top-task analysis reveals what actually is.</p>
+  <p>I also learned that presenting to a board is a design problem. The deliverable is not slides. It is confidence. They needed to believe that we understood the situation well enough to make decisions they could stand behind. That required evidence, not enthusiasm.</p>
+</div>
+
+<div class="nav-next">
+  <span>Next case study</span>
+  <a href="ai-capability.html">Building AI Capability Across 40 People &rarr;</a>
+</div>
+
+</main>
+<footer><p>&copy; 2026 Don Crowley. Built with care for typography and accessibility.</p></footer>
+</body>
+</html>

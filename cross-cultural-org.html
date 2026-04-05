@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a Cross-Cultural Design Organisation — Don Crowley</title>
+<meta name="description" content="Leading 16 designers across 6 nationalities and 12 markets with zero attrition. How clarity, autonomy, and deliberate cultural navigation built a team that chose to stay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --serif: 'IBM Plex Serif', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --bg: #fafaf8;
+    --border: #ddd;
+    --max-width: 680px;
+  }
+
+  html { font-size: 18px; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  .back-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 3rem;
+    letter-spacing: 0.02em;
+  }
+  .back-link:hover { color: var(--text); }
+
+  .case-meta {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case-meta dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .case-meta dt {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .case-meta dd {
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  p { margin-bottom: 1.2rem; }
+
+  .metric-inline {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .pullquote {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 2.5rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--text);
+    color: var(--text);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+
+  .outcome-block {
+    background: #f0f0ec;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 2px;
+  }
+
+  .outcome-block h3 {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .outcome-block p { margin-bottom: 0.8rem; }
+  .outcome-block p:last-child { margin-bottom: 0; }
+
+  .reflection {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .reflection h2 { margin-top: 0; }
+  .reflection p { color: var(--text-secondary); }
+
+  .nav-next {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+
+  .nav-next span {
+    display: block;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .nav-next a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-next a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    h1 { font-size: 1.8rem; }
+    .case-meta dl { grid-template-columns: 1fr; gap: 1rem; }
+    .container { padding: 2rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<main class="container">
+
+<a href="index.html" class="back-link">&larr; Don Crowley</a>
+
+<h1>Building a Cross-Cultural Design Organisation</h1>
+<p class="subtitle">Sixteen people. Six nationalities. Twelve markets. Zero attrition in eighteen months. This is not a project case study. It is the story of building a team.</p>
+
+<div class="case-meta">
+  <dl>
+    <div>
+      <dt>Role</dt>
+      <dd>Head of Design</dd>
+    </div>
+    <div>
+      <dt>Organisation</dt>
+      <dd>Alef Education, Abu Dhabi</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>2022 &ndash; present</dd>
+    </div>
+  </dl>
+</div>
+
+<h2>Why this matters</h2>
+
+<p>Most design leadership case studies describe products. This one describes the people who make products possible. I include it because building a high-performing team across cultural boundaries is the hardest and most consequential thing I do. The design system, the dashboards, the AI training, the product operations framework: all of those exist because this team works. None of them would exist if it did not.</p>
+
+<p>Cross-cultural leadership is not a soft skill you list on a CV. It is a daily practice of navigating different expectations about hierarchy, feedback, communication, conflict, and ambition. Getting it right means people do extraordinary work. Getting it wrong means talented people leave, and you never quite understand why.</p>
+
+<h2>The composition</h2>
+
+<p>The team spans <span class="metric-inline">16 people</span> across three functions: Product Design, Content Design, and Product Operations. They represent <span class="metric-inline">six nationalities</span> and their work reaches <span class="metric-inline">12 international markets</span>, serving over a million learners.</p>
+
+<p>Each cultural context brings a different set of working assumptions. These are not stereotypes. They are patterns I have observed and navigated over years of working in international teams across Europe and the Middle East.</p>
+
+<p>Some team members come from cultures where hierarchy shapes every interaction. Direct feedback from a manager is received as a directive, not an invitation to discuss. Others come from cultures where collaboration is assumed and direct disagreement is welcomed. Some value detailed process documentation. Others work best with broad goals and freedom to find their own path.</p>
+
+<p>The mistake most managers make is choosing one model and applying it uniformly. That approach works when everyone shares the same cultural assumptions. In a team of six nationalities, it fails immediately.</p>
+
+<h2>What I did differently</h2>
+
+<h3>Adapted communication, not people</h3>
+
+<p>I do not ask the team to conform to a single communication style. I adjust mine. This is not about performing cultural sensitivity. It is about recognising that the same message lands differently depending on how it is delivered.</p>
+
+<p>Feedback for someone from a culture that values indirect communication requires a different framing than feedback for someone who expects directness. The content of the feedback does not change. The delivery does. This is not compromise. It is precision.</p>
+
+<h3>Built psychological safety through structure, not sentiment</h3>
+
+<p>Psychological safety is often discussed as though it were a feeling. In practice, it is a set of structural decisions. I created recurring rituals: design critiques with clear rules about how feedback is given, retrospectives where every voice is heard before any conclusions are drawn, and one-to-ones where the agenda belongs to the team member, not to me.</p>
+
+<p>These structures do the heavy lifting. They create predictability. In a cross-cultural team, predictability is safety. When people know what to expect from a critique session, they bring their real work. When they do not know what to expect, they bring their safest work. The difference between those two versions is the difference between a team that grows and a team that stagnates.</p>
+
+<h3>Invested in professional growth as retention strategy</h3>
+
+<p>I sponsored Nielsen Norman Group and Interaction Design Foundation certifications. I built structured learning paths with milestone checkpoints. Junior designers were paired with senior mentors and given progressively larger scopes of responsibility.</p>
+
+<p>This was not generosity. It was strategy. People stay where they are growing. In a market where competitors recruit aggressively, the most effective retention tool is not a higher salary. It is visible progress toward the career someone wants.</p>
+
+<p>Multiple designers moved from junior to mid-level roles under this programme. The investment paid for itself: hiring a replacement designer costs months. Developing an existing one costs weeks and produces a more loyal, more capable team member.</p>
+
+<h3>Created a shared design language</h3>
+
+<p>When people come from different design traditions, "good design" means different things. I established shared reference points: a consolidated design system with clear usage rules, documented quality criteria, and regular cross-team reviews where work is assessed against those shared standards rather than individual preferences.</p>
+
+<p>This shared language became the connective tissue. It allowed designers from different backgrounds to give each other meaningful critique. Without it, feedback defaults to personal taste. With it, feedback becomes a professional conversation about whether the work meets the standard the team has agreed on.</p>
+
+<div class="pullquote">Managing a diverse team is not about treating everyone the same. It is about understanding different approaches to hierarchy, feedback, and collaboration while building unified outcomes.</div>
+
+<h2>What happened</h2>
+
+<div class="outcome-block">
+  <h3>Results</h3>
+  <p><span class="metric-inline">Zero attrition</span> across the entire 16-person team over 18 months. In a competitive market with active recruitment from larger companies, nobody left.</p>
+  <p><span class="metric-inline">40% efficiency gain</span> in design production, measured against the same period in the prior year.</p>
+  <p><span class="metric-inline">28% increase</span> in user satisfaction scores across the platforms the team supports.</p>
+  <p>Multiple junior designers promoted to mid-level roles through structured development paths.</p>
+  <p>The team transitioned from executing requests to leading full discovery-to-ship cycles independently. Design earned a seat at the product strategy table.</p>
+</div>
+
+<hr class="divider">
+
+<div class="reflection">
+  <h2>What I learned</h2>
+
+  <p>The most important thing I learned about cross-cultural leadership is that it is not a special category of leadership. It is leadership done properly. Every team has different communication styles, different expectations about authority, different comfort levels with ambiguity. A six-nationality team simply makes those differences visible rather than allowing them to hide beneath a shared cultural surface.</p>
+
+  <p>I also learned that the metrics which matter most in team leadership are the ones that take the longest to produce. Attrition, growth, promotion, cultural cohesion: these are trailing indicators. You cannot optimise for them directly. You can only build the conditions that make them likely, and then wait.</p>
+
+  <p>The conditions, in my experience, are simpler than most leadership literature suggests: be clear about expectations, be consistent in how you treat people, be honest in your feedback, and invest genuinely in their growth. The cross-cultural dimension adds nuance to the delivery but does not change the fundamentals.</p>
+
+  <p>After thirty years across four countries, this team is the strongest proof of concept for how I lead. Not the design system. Not the dashboard. The people.</p>
+</div>
+
+<div class="nav-next">
+  <span>Back to</span>
+  <a href="index.html">Don Crowley &rarr;</a>
+</div>
+
+</main>
+</body>
+</html>

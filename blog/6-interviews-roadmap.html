@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How 6 User Interviews Changed a 10-Year Roadmap — Don Crowley</title>
+<meta name="description" content="The board said rebuilding our legacy platform would take 10 years. Six user interviews proved them wrong. Here is how design research reframed the business case.">
+<link rel="canonical" href="https://crowley.nl/blog/6-interviews-roadmap.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How 6 User Interviews Changed a 10-Year Roadmap","description":"The board said rebuilding our legacy platform would take 10 years. Six user interviews proved them wrong.","author":{"@type":"Person","name":"Don Crowley","url":"https://crowley.nl","jobTitle":"Head of Design"},"datePublished":"2026-03-01","url":"https://crowley.nl/blog/6-interviews-roadmap.html","keywords":["legacy system modernisation","design leadership","user research business case","top task analysis","enterprise UX strategy"]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--serif:'IBM Plex Serif',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;--orange:#CC5500;--orange-light:#FFF8F3;--navy:#2C3E50;--text-dark:#1a1a1a;--text-mid:#444;--text-light:#666;--text-muted:#999;--bg:#ffffff;--bg-off:#fafaf9;--border:#e8e2dc;--max-width:720px}
+html{font-size:17px;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.top-bar{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.top-bar a{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--navy);text-decoration:none;transition:color .2s}
+.top-bar a:hover{color:var(--orange)}
+.top-bar nav a{font-family:var(--sans);font-size:.9rem;font-weight:500;margin-left:2rem}
+.blog-layout{max-width:960px;margin:0 auto;padding:3.5rem 1.5rem 6rem;display:grid;grid-template-columns:1fr 240px;gap:3rem}
+.blog-main{max-width:var(--max-width)}
+.blog-sidebar{padding-top:.5rem}
+.blog-sidebar h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:1rem}
+.blog-sidebar ul{list-style:none;padding:0}
+.blog-sidebar li{margin-bottom:1rem}
+.blog-sidebar li a{font-size:.9rem;color:var(--text-mid);text-decoration:none;line-height:1.4;display:block;transition:color .2s}
+.blog-sidebar li a:hover{color:var(--orange)}
+.blog-sidebar li.active a{color:var(--orange);font-weight:500}
+.blog-sidebar .sidebar-cta{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--text-muted);line-height:1.6}
+.blog-sidebar .sidebar-cta a{color:var(--orange)}
+article h1{font-family:var(--serif);font-size:2.2rem;font-weight:600;line-height:1.2;margin-bottom:.75rem;letter-spacing:-.02em;color:var(--navy)}
+article .subtitle{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--text-light);line-height:1.6;margin-bottom:1.5rem}
+article .post-meta{font-size:.82rem;color:var(--text-muted);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+article h2{font-family:var(--serif);font-size:1.35rem;font-weight:600;margin-top:2.5rem;margin-bottom:.75rem;color:var(--navy)}
+article h3{font-family:var(--sans);font-size:1.05rem;font-weight:600;margin-top:2rem;margin-bottom:.5rem;color:var(--navy)}
+article p{margin-bottom:1.15rem}
+article ul,article ol{margin:0 0 1.25rem 1.5rem}
+article li{margin-bottom:.4rem}
+article strong{font-weight:600}
+.metric-inline{font-family:var(--serif);font-weight:600;color:var(--orange)}
+.pullquote{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.55;margin:2rem 0;padding-left:1.5rem;border-left:4px solid var(--orange);color:var(--navy)}
+.outcome-block{background:var(--orange-light);border:1px solid var(--border);padding:1.5rem 2rem;margin:2rem 0;border-radius:6px}
+.outcome-block h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.75rem;margin-top:0}
+.outcome-block p{margin-bottom:.6rem}
+.outcome-block p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
+table th{text-align:left;font-weight:600;color:var(--navy);padding:.6rem .75rem;border-bottom:2px solid var(--border);font-size:.8rem}
+table td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-mid)}
+table tr:last-child td{border-bottom:none}
+.post-nav{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.85rem}
+.post-nav span{display:block;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.3rem}
+.post-nav a{color:var(--orange);text-decoration:none;font-weight:500}
+.post-nav a:hover{color:var(--navy)}
+footer{max-width:960px;margin:0 auto;padding:0 1.5rem 3rem;font-size:.8rem;color:var(--text-muted)}
+@media(max-width:768px){.blog-layout{grid-template-columns:1fr;gap:2rem}.blog-sidebar{order:2;border-top:1px solid var(--border);padding-top:2rem}}
+@media(max-width:600px){html{font-size:16px}article h1{font-size:1.8rem}.top-bar{padding:1rem 1.25rem}.top-bar nav a{margin-left:1rem;font-size:.85rem}.blog-layout{padding:2rem 1.25rem 4rem}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <a href="../index.html">Don Crowley</a>
+  <nav><a href="../index.html#work">Work</a><a href="index.html">Writing</a><a href="../index.html#contact">Contact</a></nav>
+</header>
+<div class="blog-layout">
+<main class="blog-main">
+<article>
+
+<h1>How 6 User Interviews Changed a 10-Year Roadmap</h1>
+<p class="subtitle">When the board says something is impossible, do not argue. Show them the data.</p>
+<p class="post-meta">Don Crowley &middot; March 2026</p>
+
+<p>Early in my tenure at a large EdTech company, I faced a challenge that would define my approach to design leadership for years to come.</p>
+
+<p>We had a monster legacy system. Fourteen years of Delphi code. Complex legal requirements baked into every module. The market was demanding a modern web solution, and we were haemorrhaging competitive ground every quarter we delayed.</p>
+
+<p>Leadership did the maths: migrating every feature to a new platform would take over a decade. The board's conclusion was simple: it was not happening.</p>
+
+<p>But here is what I knew from three decades of leading design teams: users do not need every feature. They need the right features.</p>
+
+<p>That insight, and the research to prove it, changed a 10-year timeline into an approved roadmap in under six months.</p>
+
+<h2>The legacy system trap</h2>
+
+<p>If you have worked in enterprise software, you have seen this pattern.</p>
+
+<p>A platform accumulates features over years. Each feature exists because someone, at some point, needed it. Legal requirements get encoded. Edge cases get handled. The system becomes comprehensive, and comprehensively unmovable.</p>
+
+<p>When modernisation conversations start, engineering does the responsible thing: they scope the full migration. Every feature. Every edge case. Every legal requirement.</p>
+
+<p>The number comes back terrifying. Leadership looks at the timeline, looks at the budget, and shelves the project.</p>
+
+<div class="pullquote">This is where most legacy modernisation efforts die: not because they are impossible, but because they are scoped wrong.</div>
+
+<h2>The research that changed everything</h2>
+
+<p>I proposed a different approach: before scoping what to build, let us understand what users actually do.</p>
+
+<p>I ran a top task discovery initiative. Six user interviews. One expert validation group with power users and internal stakeholders.</p>
+
+<p>The finding was striking, though not surprising to anyone who has done this research before: users spent <span class="metric-inline">95% of their time on 6-10 core tasks</span>. Everything else, the hundreds of features that made the migration estimate so daunting, was rarely touched.</p>
+
+<p>This was not about cutting corners. It was about understanding where value actually lived.</p>
+
+<h2>Building the business case</h2>
+
+<p>Data alone does not change minds. You need to translate research into language the board understands.</p>
+
+<p>I built a business case with three components:</p>
+
+<h3>1. The task priority matrix</h3>
+<p>A clear visualisation showing which tasks users performed daily, weekly, monthly, and rarely. The concentration at the top was impossible to ignore: a small number of workflows accounted for almost all user activity.</p>
+
+<h3>2. The phased migration proposal</h3>
+<p>Instead of "rebuild everything," I proposed a phased approach: launch with the core tasks that covered 95% of user needs. Handle edge cases through a legacy bridge initially. Migrate remaining functionality based on actual demand, not theoretical completeness.</p>
+
+<h3>3. The business value calculation</h3>
+<p>I showed what we could ship in year one versus year ten. I quantified the competitive risk of waiting. I demonstrated that a focused MVP would capture the market opportunity while the "complete" rebuild would miss it entirely.</p>
+
+<p>The board did not need convincing that users mattered. They needed evidence that a smaller scope was not a compromise: it was the smarter strategy.</p>
+
+<h2>The outcome</h2>
+
+<div class="outcome-block">
+<h3>Results</h3>
+<p>September 2021: The board approved the new product roadmap.</p>
+<p>2022: The majority of development effort shifted to the modernisation initiative, an initiative that would not have existed without that research.</p>
+<p>The platform that "could not be rebuilt" was being rebuilt. Not because the technical constraints changed, but because the scope was redefined by user reality rather than system completeness.</p>
+</div>
+
+<h2>The lesson for design leaders</h2>
+
+<p>Now, as Head of Design, I see this pattern everywhere. Design leaders struggle to get traction on strategic initiatives because they are arguing on the wrong terms.</p>
+
+<p>When executives say something is impossible, they are usually responding to a scope or a timeline. They are not saying the problem does not matter. They are saying the proposed solution does not fit their constraints.</p>
+
+<p>Your job is not to argue. Your job is to reframe.</p>
+
+<p>Here is the approach I now use for any initiative hitting executive resistance:</p>
+
+<p><strong>Start with user reality, not system capability.</strong> What do users actually need? Not what the current system does, not what competitors offer, not what stakeholders assume: what do users demonstrably spend their time on?</p>
+
+<p><strong>Quantify the gap between perception and reality.</strong> Executives often overestimate how much of a system users actually use. Show them the data. The concentration of usage on core tasks is almost always more extreme than people expect.</p>
+
+<p><strong>Propose a scope that fits their constraints.</strong> If ten years is impossible, what is possible in one year? What would deliver 80% of the value?</p>
+
+<p><strong>Make the risk of inaction concrete.</strong> Do not just show what you could build. Show what you lose by waiting. Competitive position, user satisfaction, technical debt accumulation: make the cost of the status quo tangible.</p>
+
+<h2>Why this matters more than ever</h2>
+
+<p>Legacy modernisation is accelerating across every industry. The pressure to move from outdated systems to modern platforms is intensifying, driven by user expectations, competitive dynamics, and the integration requirements of AI.</p>
+
+<p>Design leaders who can navigate these conversations, who can translate user research into board-level business cases, will be invaluable.</p>
+
+<p>This is not about being a better designer. It is about being a better strategic partner.</p>
+
+<p>The companies that modernise successfully will not be the ones with the biggest budgets. They will be the ones who scope smartly, prioritise ruthlessly, and let user behaviour, not system architecture, define what "complete" actually means.</p>
+
+<h2>The question for your organisation</h2>
+
+<p>If you are sitting on a legacy system that feels immovable, ask yourself:</p>
+
+<ul>
+<li>Do you actually know which features users depend on daily?</li>
+<li>Have you validated assumptions about "must-have" functionality with real data?</li>
+<li>Could a focused, phased approach unlock a roadmap that currently seems impossible?</li>
+</ul>
+
+<p>Six interviews changed a ten-year timeline for me. The research does not have to be elaborate. It has to be focused on the right question: what do users actually need?</p>
+
+</article>
+<div class="post-nav">
+  <span>Back to</span>
+  <a href="index.html">&larr; All articles</a>
+</div>
+</main>
+<aside class="blog-sidebar"><h3>Articles</h3><ul><li><a href="ai-chief-of-staff.html">How I Built an AI Chief of Staff Using Claude Code</a></li><li><a href="hiring-designers.html">Why I Stopped Trusting Job Titles When Hiring Designers</a></li><li class="active"><a href="6-interviews-roadmap.html">How 6 User Interviews Changed a 10-Year Roadmap</a></li></ul><div class="sidebar-cta"><p>I write about design leadership, AI adoption, and building teams across cultures.</p><p><a href="https://www.linkedin.com/in/doncrowley/">Follow on LinkedIn</a></p></div></aside>
+</div>
+<footer><p>&copy; 2026 Don Crowley. Built with care for typography and accessibility.</p></footer>
+</body>
+</html>

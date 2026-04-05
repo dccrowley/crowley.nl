@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building AI Capability Across 40 People — Don Crowley</title>
+<meta name="description" content="How I built an AI training programme from scratch: a five-level prompting framework, hands-on workshops, and automation workflows that changed how teams make decisions.">
+<link rel="canonical" href="https://crowley.nl/ai-capability.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--serif:'IBM Plex Serif',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;--orange:#CC5500;--orange-light:#FFF8F3;--navy:#2C3E50;--text-dark:#1a1a1a;--text-mid:#444;--text-light:#666;--text-muted:#999;--bg:#ffffff;--bg-off:#fafaf9;--border:#e8e2dc;--max-width:720px}
+html{font-size:17px;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.top-bar{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.top-bar a{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--navy);text-decoration:none;transition:color .2s}
+.top-bar a:hover{color:var(--orange)}
+.top-bar nav a{font-family:var(--sans);font-size:.9rem;font-weight:500;margin-left:2rem}
+.container{max-width:var(--max-width);margin:0 auto;padding:3.5rem 1.5rem 6rem}
+.case-meta{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.case-meta dl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;font-size:.85rem}
+.case-meta dt{color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.25rem}
+.case-meta dd{font-weight:500;color:var(--navy);line-height:1.4}
+h1{font-family:var(--serif);font-size:2.4rem;font-weight:600;line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em;color:var(--navy)}
+.subtitle{font-size:1.15rem;color:var(--text-light);line-height:1.65;margin-bottom:3rem}
+h2{font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-top:3.5rem;margin-bottom:1rem;letter-spacing:-.01em;color:var(--navy)}
+h3{font-family:var(--sans);font-size:1.05rem;font-weight:600;margin-top:2.25rem;margin-bottom:.6rem;color:var(--navy)}
+p{margin-bottom:1.25rem}
+.metric-inline{font-family:var(--serif);font-weight:600;color:var(--orange)}
+.pullquote{font-family:var(--serif);font-size:1.25rem;font-style:italic;line-height:1.55;margin:2.5rem 0;padding-left:1.5rem;border-left:4px solid var(--orange);color:var(--navy)}
+.case-figure{margin:2.5rem -2rem;padding:0}
+.case-figure img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--border);background:var(--bg-off)}
+.case-figure figcaption{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.5;padding:0 2rem}
+.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:2.5rem -2rem}
+.image-grid img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--border);background:var(--bg-off)}
+.image-grid-caption{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.5;padding:0 2rem;grid-column:1/-1}
+.outcome-block{background:var(--orange-light);border:1px solid var(--border);padding:2rem;margin:2rem 0;border-radius:6px}
+.outcome-block h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:1rem;margin-top:0}
+.outcome-block p{margin-bottom:.75rem}
+.outcome-block p:last-child{margin-bottom:0}
+.divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+.reflection{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.reflection h2{margin-top:0}
+.reflection p{color:var(--text-mid)}
+.case-testimonial{background:var(--orange-light);border:1px solid var(--border);border-radius:6px;padding:2rem;margin:2.5rem 0}
+.case-testimonial blockquote{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--text-mid);margin-bottom:1rem}
+.case-testimonial cite{font-style:normal;font-size:.85rem;font-weight:500;color:var(--navy);display:block}
+.case-testimonial cite span{font-weight:400;color:var(--text-muted);display:block}
+.nav-next{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-size:.85rem}
+.nav-next span{display:block;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.3rem}
+.nav-next a{color:var(--orange);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-next a:hover{color:var(--navy)}
+footer{max-width:var(--max-width);margin:0 auto;padding:0 1.5rem 3rem;font-size:.8rem;color:var(--text-muted)}
+@media(max-width:600px){html{font-size:16px}h1{font-size:1.9rem}.case-meta dl{grid-template-columns:1fr;gap:.75rem}.container{padding:2.5rem 1.25rem 4rem}.case-figure{margin:2rem -.5rem}.case-figure figcaption{padding:0 .5rem}.image-grid{margin:2rem -.5rem;gap:8px}.image-grid-caption{padding:0 .5rem}.top-bar{padding:1rem 1.25rem}.top-bar nav a{margin-left:1rem;font-size:.85rem}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <a href="index.html">Don Crowley</a>
+  <nav><a href="index.html#work">Work</a><a href="blog/">Writing</a><a href="index.html#contact">Contact</a></nav>
+</header>
+<main class="container">
+
+<h1>Building AI Capability Across 40 People</h1>
+<p class="subtitle">How a training programme built from scratch changed not just what tools people used, but how they approach every task.</p>
+
+<div class="case-meta">
+  <dl>
+    <div><dt>Role</dt><dd>Head of Design &amp; Product Operations</dd></div>
+    <div><dt>Organisation</dt><dd>Alef Education, Abu Dhabi</dd></div>
+    <div><dt>Timeline</dt><dd>2023 &ndash; present</dd></div>
+  </dl>
+</div>
+
+<h2>The stakes</h2>
+
+<p>In 2023, the organisation had no AI literacy and no integration strategy. People fell into two camps: those ignoring AI entirely, and those experimenting without direction. Neither was producing results. The gap was not in access to tools. Everyone had accounts. The gap was in knowing what to do with them.</p>
+
+<p>The risk was real. Competitors were moving faster. Internal teams were spending days on work that could take hours. And the longer the organisation waited for a formal strategy, the wider the gap between what was possible and what was actually happening.</p>
+
+<h2>What I built</h2>
+
+<p>I designed and delivered an AI Playbook Workshop that became the foundation for the organisation's AI adoption. The programme was not a tools tutorial. I structured it around a core principle: <span class="metric-inline">AI-First does not mean AI-Only</span>. It means considering AI capabilities at the beginning of any task, not replacing human judgement.</p>
+
+<div class="image-grid">
+  <img src="ai-workshop-slide-1.png" alt="AI Playbook Workshop cover slide: AI-first mindset, prompting, and AI tools" loading="lazy">
+  <img src="ai-workshop-slide-2.png" alt="The AI-First Mindset framework showing what it means and what it does not" loading="lazy">
+  <p class="image-grid-caption">The AI Playbook Workshop I built and delivered to 40+ colleagues across design and product. The opening framed AI-First as a mindset shift, not a tool adoption exercise.</p>
+</div>
+
+<h2>The five-level prompting framework</h2>
+
+<p>The centrepiece of the programme was a structured progression through five levels of prompting competence. Each level built on the previous one, moving from basic task framing to sophisticated meta-prompting strategies.</p>
+
+<p>At Level 1, people learn to articulate a clear task. At Level 2, they add quality modifiers. By Level 3, they are providing domain-specific context. Level 4 introduces project knowledge: pre-loading AI with research, OKRs, and constraints so that even simple prompts produce highly specific outputs. Level 5 is the shift that changes everything: asking the AI to create the prompt for you. This meta-prompting approach produces results that most people cannot achieve through direct instruction alone.</p>
+
+<div class="image-grid">
+  <img src="ai-workshop-slide-5.png" alt="Domain Expertise plus AI equals Superpowers: traditional versus AI-enhanced approach comparison" loading="lazy">
+  <img src="ai-workshop-slide-15.png" alt="Level 5 meta-prompting: asking the AI to create the perfect prompt" loading="lazy">
+  <p class="image-grid-caption">Left: the competitive analysis example showing 3x speed improvement with deeper insights. Right: Level 5 meta-prompting, where the AI creates the prompt. This was the moment adoption accelerated.</p>
+</div>
+
+<h2>Beyond prompting: workflow automation</h2>
+
+<p>The programme extended beyond prompting into practical workflow automation. I covered three platforms at different complexity levels: Zapier for quick wins, Make.com for visual workflow builders, and n8n for technical teams who wanted full control. Each was mapped to specific EdTech use cases: automated student success alerts, feedback-to-backlog pipelines, and release communication workflows.</p>
+
+<p>I also introduced research synthesis tools. NotebookLM became central to how teams processed large documents: creating audio overviews, mind maps, and structured summaries from uploaded sources. This was particularly valuable for product marketing, where synthesising competitive intelligence had previously consumed days.</p>
+
+<div class="pullquote">The value was not in the tools. It was in the shift: teams started thinking with AI at the beginning of a task, not reaching for it as a last resort.</div>
+
+<h2>What changed</h2>
+
+<p>The measurable outcomes were clear. But the more important change was behavioural. Teams that previously spent days synthesising research findings could now produce structured analysis in hours. People began asking different questions. When you know what the algorithmic assistants can handle, you stop accepting slow manual processes as inevitable.</p>
+
+<div class="outcome-block">
+  <h3>Results</h3>
+  <p>Over <span class="metric-inline">40 colleagues</span> across design and product completed the programme.</p>
+  <p>Research synthesis reduced from <span class="metric-inline">days to hours</span>.</p>
+  <p>Manual workflows cut by over <span class="metric-inline">60%</span> through automation.</p>
+  <p>The programme became a recurring workshop, not a one-off event. New joiners go through it as part of onboarding.</p>
+</div>
+
+<div class="reflection">
+  <h2>What I learned</h2>
+  <p>The biggest obstacle to AI adoption is not technical. It is emotional. People worry about being replaced, about looking foolish for not knowing enough, about trusting outputs they cannot fully explain. The programme worked because it addressed those concerns directly. The AI-First framing gave people permission to experiment. The five-level structure gave them a clear path from beginner to advanced. And the emphasis on human skills, the things AI cannot replace, gave them confidence that their expertise still mattered.</p>
+  <p>I also learned that the best way to drive adoption is not to advocate for it. It is to make the results visible. When one team cut their research cycle from three days to three hours, the rest of the organisation did not need convincing. They needed access to the same programme.</p>
+</div>
+
+<div class="nav-next">
+  <span>Next case study</span>
+  <a href="design-system-ops.html">Design System &amp; Product Operations &rarr;</a>
+</div>
+
+</main>
+<footer><p>&copy; 2026 Don Crowley. Built with care for typography and accessibility.</p></footer>
+</body>
+</html>

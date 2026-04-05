@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System &amp; Product Operations — Don Crowley</title>
+<meta name="description" content="Consolidating 60+ templates to 22 reusable components and building a feedback analytics dashboard that connected qualitative and quantitative data for the first time.">
+<link rel="canonical" href="https://crowley.nl/design-system-ops.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--serif:'IBM Plex Serif',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,sans-serif;--orange:#CC5500;--orange-light:#FFF8F3;--navy:#2C3E50;--text-dark:#1a1a1a;--text-mid:#444;--text-light:#666;--text-muted:#999;--bg:#ffffff;--bg-off:#fafaf9;--border:#e8e2dc;--max-width:720px}
+html{font-size:17px;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-dark);background:var(--bg);line-height:1.75;-webkit-font-smoothing:antialiased}
+.top-bar{padding:1.25rem 2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+.top-bar a{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--navy);text-decoration:none;transition:color .2s}
+.top-bar a:hover{color:var(--orange)}
+.top-bar nav a{font-family:var(--sans);font-size:.9rem;font-weight:500;margin-left:2rem}
+.container{max-width:var(--max-width);margin:0 auto;padding:3.5rem 1.5rem 6rem}
+.case-meta{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.case-meta dl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;font-size:.85rem}
+.case-meta dt{color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.25rem}
+.case-meta dd{font-weight:500;color:var(--navy);line-height:1.4}
+h1{font-family:var(--serif);font-size:2.4rem;font-weight:600;line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em;color:var(--navy)}
+.subtitle{font-size:1.15rem;color:var(--text-light);line-height:1.65;margin-bottom:3rem}
+h2{font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-top:3.5rem;margin-bottom:1rem;letter-spacing:-.01em;color:var(--navy)}
+h3{font-family:var(--sans);font-size:1.05rem;font-weight:600;margin-top:2.25rem;margin-bottom:.6rem;color:var(--navy)}
+p{margin-bottom:1.25rem}
+.metric-inline{font-family:var(--serif);font-weight:600;color:var(--orange)}
+.pullquote{font-family:var(--serif);font-size:1.25rem;font-style:italic;line-height:1.55;margin:2.5rem 0;padding-left:1.5rem;border-left:4px solid var(--orange);color:var(--navy)}
+.case-figure{margin:2.5rem -2rem;padding:0}
+.case-figure img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--border);background:var(--bg-off)}
+.case-figure figcaption{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.5;padding:0 2rem}
+.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:2.5rem -2rem}
+.image-grid img{width:100%;height:auto;display:block;border-radius:4px;border:1px solid var(--border);background:var(--bg-off)}
+.image-grid-caption{font-size:.8rem;color:var(--text-muted);margin-top:.75rem;line-height:1.5;padding:0 2rem;grid-column:1/-1}
+.outcome-block{background:var(--orange-light);border:1px solid var(--border);padding:2rem;margin:2rem 0;border-radius:6px}
+.outcome-block h3{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:1rem;margin-top:0}
+.outcome-block p{margin-bottom:.75rem}
+.outcome-block p:last-child{margin-bottom:0}
+.divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+.reflection{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.reflection h2{margin-top:0}
+.reflection p{color:var(--text-mid)}
+.case-testimonial{background:var(--orange-light);border:1px solid var(--border);border-radius:6px;padding:2rem;margin:2.5rem 0}
+.case-testimonial blockquote{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--text-mid);margin-bottom:1rem}
+.case-testimonial cite{font-style:normal;font-size:.85rem;font-weight:500;color:var(--navy);display:block}
+.case-testimonial cite span{font-weight:400;color:var(--text-muted);display:block}
+.nav-next{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);font-size:.85rem}
+.nav-next span{display:block;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;margin-bottom:.3rem}
+.nav-next a{color:var(--orange);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-next a:hover{color:var(--navy)}
+footer{max-width:var(--max-width);margin:0 auto;padding:0 1.5rem 3rem;font-size:.8rem;color:var(--text-muted)}
+@media(max-width:600px){html{font-size:16px}h1{font-size:1.9rem}.case-meta dl{grid-template-columns:1fr;gap:.75rem}.container{padding:2.5rem 1.25rem 4rem}.case-figure{margin:2rem -.5rem}.case-figure figcaption{padding:0 .5rem}.image-grid{margin:2rem -.5rem;gap:8px}.image-grid-caption{padding:0 .5rem}.top-bar{padding:1rem 1.25rem}.top-bar nav a{margin-left:1rem;font-size:.85rem}}
+</style>
+</head>
+<body>
+<header class="top-bar">
+  <a href="index.html">Don Crowley</a>
+  <nav><a href="index.html#work">Work</a><a href="blog/">Writing</a><a href="index.html#contact">Contact</a></nav>
+</header>
+<main class="container">
+
+<h1>Design System &amp; Product Operations</h1>
+<p class="subtitle">Two sides of the same problem: building the infrastructure that lets a design organisation operate at scale. One reduced 60 templates to 22. The other connected the data nobody was connecting.</p>
+
+<div class="case-meta">
+  <dl>
+    <div><dt>Role</dt><dd>Head of Design &amp; Product Operations</dd></div>
+    <div><dt>Organisation</dt><dd>Alef Education, Abu Dhabi</dd></div>
+    <div><dt>Timeline</dt><dd>2022 &ndash; present</dd></div>
+  </dl>
+</div>
+
+<h2>The design system: cutting was the real work</h2>
+
+<p>When I arrived at Alef Education, the platform had accumulated over <span class="metric-inline">60 templates</span> with no governance. Different designers made different decisions for the same components. Spacing was inconsistent. Colour usage varied. There was no documentation. Production was slow because every new piece of content required decisions that should have been made once and codified.</p>
+
+<p>I audited the full template library and found the expected mess: duplicated components serving the same interaction pattern, conflicting visual treatments, and no clear ownership. The solution was not to build more. It was to cut.</p>
+
+<p>I reduced the library to <span class="metric-inline">22 reusable components</span>, built a scalable pattern library, and wrote the governance rules to keep it clean. Each of the 22 components serves a distinct learning interaction: intro slides, comprehension questions, matching exercises, assessment variants, and so on.</p>
+
+<div class="image-grid">
+  <img src="alef-template-01-Intro-Slide.png" alt="Alef Education intro slide template with image placeholder and lesson start button" loading="lazy">
+  <img src="alef-template-0Question.png" alt="Alef Education question template with reading passage and multiple choice answers" loading="lazy">
+  <img src="alef-template-0Matching-Word-Only.png" alt="Alef Education matching exercise template with colour-coded connection lines" loading="lazy">
+  <img src="alef-template-0Question-2.png" alt="Alef Education question variant template" loading="lazy">
+  <p class="image-grid-caption">Four of the 22 consolidated templates. Before consolidation, over 60 templates covered the same ground with inconsistent patterns, no documentation, and no governance.</p>
+</div>
+
+<p>The consolidation was not a design exercise. It was an organisational negotiation. Every redundant template had an owner who believed theirs was necessary. The discipline required was in cutting, not creating. Getting the team to trust the reduced set took workshops, shared ownership of the documentation, and visible evidence that production got faster.</p>
+
+<p>Adoption reached <span class="metric-inline">95%</span> within six months. Production cycles dropped by <span class="metric-inline">40%</span>. Annual savings from the consolidation and associated vendor management totalled <span class="metric-inline">&pound;200K</span>.</p>
+
+<div class="pullquote">Removing things is harder than adding them. The discipline to cut was the real work.</div>
+
+<h2>Product operations: connecting data nobody was connecting</h2>
+
+<p>Product decisions were being made without structured user feedback. Qualitative data from Usersnap, capturing what users said and felt, sat in one system. Quantitative data from Amplitude, showing what users actually did, sat in another. Nobody was connecting the two. The result was a familiar pattern: anecdotal feedback driving roadmap decisions, with no way to validate whether complaints reflected widespread problems or individual frustrations.</p>
+
+<p>I built a feedback analytics dashboard that linked qualitative feedback directly to quantitative usage patterns through shared user identifiers. The dashboard connected Usersnap submissions to Amplitude behavioural data, allowing the team to see, for the first time, whether a user complaint correlated with actual usage drop-off or was an isolated case.</p>
+
+<p>I built the entire system myself using Claude Code, including the data pipeline, the SVG chart rendering, and the correlation analysis. The dashboard used CSV data dumps rather than live API connections. This was a deliberate choice: it meant we could build and validate the concept without waiting for engineering resources. The same AI-first approach I was teaching the team, I was using to ship the tooling.</p>
+
+<p>When my colleague Hari demoed the dashboard internally, the response was immediate. Leadership could see how user complaints mapped to actual usage patterns. The connection turned anecdotal feedback into actionable evidence. What had been gut-feel prioritisation became data-informed sprint planning.</p>
+
+<p>Decision-making cycles dropped from <span class="metric-inline">10 days to 3</span>. Feedback now directly informs sprint planning. The tool I built as a proof of concept became a permanent part of how the organisation works.</p>
+
+<figure class="case-figure">
+  <img src="dashboard-light.png" alt="Feedback to Journey Analysis dashboard showing Amplitude teacher journey funnel mapped to Usersnap complaint themes, and a 0.89 Pearson correlation between complaints and workflow drop-off" loading="lazy">
+  <figcaption>The Feedback to Journey dashboard I built connecting Usersnap complaint patterns to Amplitude teacher journey drop-off. The 0.89 correlation between weekly complaints and funnel drop-off proved this was the same friction surface, measured twice.</figcaption>
+</figure>
+
+<div class="outcome-block">
+  <h3>Combined results</h3>
+  <p><span class="metric-inline">&pound;200K</span> annual savings through design system consolidation and vendor management.</p>
+  <p><span class="metric-inline">40%</span> faster production cycles through the consolidated template library.</p>
+  <p><span class="metric-inline">95%</span> design system adoption within six months.</p>
+  <p><span class="metric-inline">70%</span> faster decision-making through the feedback analytics framework (10 days to 3).</p>
+  <p>Feedback dashboard adopted as a permanent product operations tool.</p>
+</div>
+
+<div class="case-testimonial" id="testimonial-chesney">
+  <blockquote>Don brings a global design perspective, blending diverse insights that enhance products and resonate with users worldwide. Don also led the charge in integrating AI into the design process, keeping the team innovative and efficient.</blockquote>
+  <cite>Philip Chesney<span>Former Product Manager, Alef Education</span></cite>
+</div>
+
+<div class="reflection">
+  <h2>What I learned</h2>
+  <p>These two projects taught me that the most impactful design leadership is often invisible. A consolidated design system does not make for a dramatic story. Neither does a feedback dashboard built on CSV dumps. But together they form the operational backbone that allows a team of sixteen people to produce consistent, high-quality work across twelve markets without depending on any single person.</p>
+  <p>The design system taught me that governance is harder than creation. Building 22 beautiful components is the easy part. Getting an organisation to trust them, use them, and stop making exceptions is where the real work happens.</p>
+  <p>The feedback dashboard taught me that the most valuable data connection is often the simplest one. Linking Usersnap to Amplitude through shared user IDs was not technically sophisticated. But nobody had done it. The gap was not in capability. It was in someone deciding it mattered enough to build, and having the AI fluency to ship it without waiting for a dev team.</p>
+</div>
+
+<div class="nav-next">
+  <span>Next case study</span>
+  <a href="cross-cultural-org.html">Building a Cross-Cultural Design Organisation &rarr;</a>
+</div>
+
+</main>
+<footer><p>&copy; 2026 Don Crowley. Built with care for typography and accessibility.</p></footer>
+</body>
+</html>

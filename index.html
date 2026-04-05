@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Crowley — Design Leader | UX Strategy, Design Operations & Team Leadership</title>
+    <meta name="description" content="Design leader with 30+ years across Sony Music Europe, Deutsche Bank, Aegon, Iddink Group, and Alef Education. Building high-performing design teams, scalable systems, and operational capability across four countries.">
+    <meta name="keywords" content="Design Leader, Head of Design, Director of Design, UX Strategy, Design Operations, Design Systems, Team Leadership, EdTech, FinTech, GovTech, Europe, Netherlands, Ireland">
+    <meta name="author" content="Don Crowley">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crowley.nl/">
+    <meta property="og:title" content="Don Crowley — Design Leader">
+    <meta property="og:description" content="30+ years building design teams, systems, and operational capability across Sony Music Europe, Deutsche Bank, Aegon, Iddink Group, and Alef Education. Open to senior leadership roles and advisory engagements across Europe.">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Don Crowley — Design Leader">
+    <meta property="twitter:description" content="30+ years building design teams, systems, and operational capability across four countries. Open to senior leadership roles and advisory engagements across Europe.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://crowley.nl/">
+    <meta name="theme-color" content="#CC5500">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Don Crowley",
+      "jobTitle": "Design Leader",
+      "url": "https://crowley.nl",
+      "nationality": "Irish",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abu Dhabi",
+        "addressCountry": "AE"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/doncrowley/"
+      ],
+      "knowsAbout": [
+        "UX Strategy",
+        "Design Leadership",
+        "Design Systems",
+        "Design Operations",
+        "Product Operations",
+        "Team Leadership",
+        "AI Integration",
+        "EdTech",
+        "FinTech",
+        "GovTech"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "The Hague University of Applied Sciences"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "UX Management Certification",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Nielsen Norman Group"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Strategic Design Leadership Masterclass",
+          "credentialCategory": "Professional Development",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "TU Delft"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --orange: #CC5500;
+            --coral: #E06633;
+            --pink: #F08866;
+            --light-pink: #FFDDD5;
+            --yellow: #FFD93D;
+            --green: #6BCB77;
+            --blue: #4285F4;
+            --purple: #9B59B6;
+            --navy: #2C3E50;
+            --text-dark: #1a1a1a;
+            --text-mid: #444444;
+            --text-light: #666666;
+            --bg-cream: #FFF8F3;
+            --bg-white: #FFFFFF;
+            --border-light: #f0e6df;
+            
+            --max-width: 1400px;
+            --section-padding: 100px;
+            --mobile-padding: 24px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            overflow-x: hidden;
+        }
+
+        /* --- Skip link --- */
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 0;
+            background: var(--orange);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            z-index: 200;
+            font-weight: 600;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* --- Decorative shapes --- */
+        .shape {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .shape-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+        .shape-blob {
+            width: 400px;
+            height: 400px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(100px);
+            opacity: 0.2;
+            animation: blob 20s ease-in-out infinite;
+        }
+        @keyframes blob {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            33% { transform: rotate(90deg) scale(1.1); }
+            66% { transform: rotate(270deg) scale(0.9); }
+        }
+        
+        /* --- Scroll progress --- */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange), var(--coral), var(--pink));
+            z-index: 201;
+            transition: width 0.1s ease;
+        }
+        
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 0;
+            background: var(--bg-cream);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            background: rgba(255, 248, 243, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-name {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-name:hover { color: var(--orange); }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--orange);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Mobile hamburger */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+        
+        /* --- Hero --- */
+        .hero {
+            padding: calc(var(--section-padding) + 80px) 0 var(--section-padding);
+            position: relative;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-white) 100%);
+            overflow: hidden;
+        }
+        .hero-shape-1 {
+            top: -200px;
+            right: -150px;
+            background: var(--orange);
+        }
+        .hero-shape-2 {
+            bottom: -100px;
+            left: -100px;
+            background: var(--pink);
+        }
+        .hero-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-title {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .hero-title span {
+            color: var(--orange);
+            font-style: italic;
+        }
+        .hero-subtitle {
+            font-size: 1.375rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        .hero-location {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-mid);
+            max-width: 780px;
+        }
+        .hero-cta {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #b34a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(204, 85, 0, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--orange);
+            border: 2px solid var(--orange);
+        }
+        .btn-outline:hover {
+            background: var(--orange);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* --- Sections --- */
+        section {
+            padding: var(--section-padding) 0;
+            position: relative;
+        }
+        .section-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .section-header {
+            margin-bottom: 60px;
+        }
+        .section-title {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: clamp(2.25rem, 3.5vw, 3rem);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 5px;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+        .section-intro {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            max-width: 680px;
+            margin-top: 1.5rem;
+        }
+        
+        /* --- Work Section --- */
+        .work-section {
+            background: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+        }
+        .work-shape {
+            top: 50%;
+            right: -200px;
+            transform: translateY(-50%);
+            background: var(--yellow);
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+        .work-item {
+            background: var(--bg-cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            position: relative;
+            cursor: default;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .work-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .work-item:nth-child(1)::before { background: linear-gradient(90deg, var(--orange), var(--coral)); }
+        .work-item:nth-child(2)::before { background: linear-gradient(90deg, var(--green), var(--blue)); }
+        .work-item:nth-child(3)::before { background: linear-gradient(90deg, var(--purple), var(--pink)); }
+        .work-item:nth-child(4)::before { background: linear-gradient(90deg, var(--yellow), var(--orange)); }
+        .work-item:nth-child(5)::before { background: linear-gradient(90deg, var(--blue), var(--purple)); }
+        
+        .work-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+        .work-item:hover::before {
+            transform: translateX(0);
+        }
+        .work-index {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--orange);
+            opacity: 0.15;
+            margin-bottom: 0.75rem;
+            font-family: 'IBM Plex Serif', Georgia, serif;
+        }
+        .work-title {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        .work-org {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        .work-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-mid);
+            margin-bottom: 1.25rem;
+        }
+        .work-meta {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        .work-meta-label {
+            color: var(--navy);
+            font-weight: 600;
+        }
+        .work-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--orange);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .work-link:hover {
+            color: #b34a00;
+        }
+        .work-link::after {
+            content: ' \2192';
+        }
+        
+        /* Full-width feature for 5th item */
+        .work-item--wide {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .work-item--wide .work-index {
+            font-size: 2.5rem;
+        }
+
+        /* --- Career spine --- */
+        .career-section {
+            background: var(--bg-cream);
+            position: relative;
+            overflow: hidden;
+        }
+        .career-shape {
+            bottom: -100px;
+            right: -100px;
+            background: var(--pink);
+        }
+        .career-timeline-wrapper {
+            margin-top: 1rem;
+        }
+        .career-timeline-svg {
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 1.25rem;
+        }
+        .career-labels {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+        .career-item {
+            text-align: center;
+            padding: 0 1rem 2rem;
+        }
+        .career-org {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+        .career-role {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        .career-years {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--orange);
+            letter-spacing: 0.03em;
+        }
+        .career-sector {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        /* --- Logo strip --- */
+        .logo-strip {
+            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .logo-strip-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .logo-strip-logos {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-items: center;
+            justify-items: center;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .logo-strip-logos svg {
+            height: 32px;
+            width: auto;
+            max-width: 100%;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+        .logo-strip-logos svg:last-child {
+            height: 40px;
+        }
+        .logo-strip-logos svg:hover {
+            opacity: 0.65;
+        }
+        
+        /* --- Testimonials --- */
+        .testimonials-section {
+            background: var(--bg-white);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            margin-top: 1rem;
+        }
+        .testimonial {
+            background: var(--bg-cream);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--orange);
+            position: relative;
+        }
+        .testimonial::before {
+            content: '\201C';
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: 4rem;
+            color: var(--orange);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            color: var(--text-mid);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* --- Approach --- */
+        .approach-section {
+            background: var(--bg-cream);
+            position: relative;
+            overflow: hidden;
+        }
+        .approach-shape {
+            bottom: -150px;
+            left: -150px;
+            background: var(--coral);
+        }
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            max-width: 1100px;
+        }
+        .approach-item {
+            padding: 2rem 2rem 2rem 0;
+        }
+        .approach-label {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .approach-text {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-mid);
+        }
+        
+        /* --- Writing & Credentials --- */
+        .writing-section {
+            background: var(--bg-white);
+            position: relative;
+        }
+        .writing-shape {
+            top: 50px;
+            right: 100px;
+            background: var(--green);
+            width: 200px;
+            height: 200px;
+        }
+        .writing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .writing-column h3 {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+        .writing-items {
+            list-style: none;
+        }
+        .writing-items li {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-mid);
+            position: relative;
+            padding-left: 1.75rem;
+            transition: color 0.3s ease;
+        }
+        .writing-items li:last-child {
+            border-bottom: none;
+        }
+        .writing-items li::before {
+            content: '\2014';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: 600;
+        }
+        .writing-items li:hover {
+            color: var(--navy);
+        }
+        .writing-items a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .writing-items a:hover {
+            color: #b34a00;
+            text-decoration: underline;
+        }
+        
+        /* --- Contact --- */
+        .contact {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2332 100%);
+            color: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-shape {
+            top: -100px;
+            right: -100px;
+            background: var(--orange);
+            opacity: 0.1;
+            width: 500px;
+            height: 500px;
+        }
+        .contact .section-title {
+            color: var(--bg-white);
+        }
+        .contact .section-title::after {
+            background: var(--orange);
+        }
+        .contact-content {
+            max-width: 680px;
+        }
+        .contact-availability {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .contact-info {
+            margin: 2rem 0;
+        }
+        .contact-info p {
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .contact-info a {
+            color: var(--orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--coral);
+            text-decoration: underline;
+        }
+        .contact-details {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-top: 2rem;
+            line-height: 1.8;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background: #141c26;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- Focus visible --- */
+        *:focus-visible {
+            outline: 2px solid var(--orange);
+            outline-offset: 3px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+            .work-item--wide {
+                grid-template-columns: 1fr;
+            }
+            .career-timeline-svg {
+                display: none;
+            }
+            .career-labels {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .career-item {
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-light);
+            }
+            .career-item:last-child {
+                border-bottom: none;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .writing-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 64px;
+            }
+            .nav-container {
+                padding: 0 var(--mobile-padding);
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-cream);
+                flex-direction: column;
+                padding: 1rem var(--mobile-padding) 2rem;
+                gap: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .hero-content,
+            .section-container {
+                padding: 0 var(--mobile-padding);
+            }
+            .hero-title {
+                font-size: clamp(2.25rem, 8vw, 3rem);
+            }
+            .hero-cta {
+                flex-direction: column;
+            }
+            .btn {
+                text-align: center;
+            }
+        }
+
+        /* --- Print --- */
+        @media print {
+            body { background: white; }
+            nav, .scroll-progress, .shape { display: none; }
+            section { padding: 2rem 0; }
+            .hero { padding-top: 2rem; }
+            a { text-decoration: underline; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="nav-name">Don Crowley</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#credentials">Credentials</a></li>
+                <li><a href="blog/">Writing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <section class="hero" id="main-content">
+        <div class="shape shape-circle hero-shape-1"></div>
+        <div class="shape shape-blob hero-shape-2"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                I turn <span>design functions</span><br>
+                into business<br>
+                assets
+            </h1>
+            <p class="hero-subtitle">Design Leader &middot; 30 years &middot; Sony Music, Deutsche Bank, Aegon, Iddink Group, Alef Education</p>
+	    <p class="hero-location">Based in Abu Dhabi &middot; Irish citizen &middot; EU work rights &middot; Fluent Dutch<!-- &middot; Available for Europe--></p>
+            <p class="hero-description">
+                I started as a designer and never lost the craft instinct. What changed over three decades is where I direct it: towards the systems, decisions, and team structures that make design matter at an organisational level. I have led design in music, banking, insurance, government services, and EdTech. Today I run 17 people across three teams and eight nationalities, owning design and product operations for a platform serving over a million learners. I am ready to bring that experience to a European organisation that wants design to operate as a strategic function, not a finishing service.
+            </p>
+            <div class="hero-cta">
+                <a href="#work" class="btn btn-primary">See the work</a>
+                <a href="https://www.linkedin.com/in/doncrowley/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">View my LinkedIn profile</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Selected Work -->
+    <section id="work" class="work-section">
+        <div class="shape shape-blob work-shape"></div>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-intro">Four projects that show how I think about design leadership: finding the real problem, building the right team, and making the outcome stick.</p>
+            </div>
+            
+            <div class="work-grid">
+                <article class="work-item work-item--wide">
+                    <div>
+                        <div class="work-index">01</div>
+                    </div>
+                    <div>
+                        <h3 class="work-title">Strategic Discovery for a 2M+ User Platform</h3>
+                        <p class="work-org">Iddink Group (Sanoma Learning) &middot; Netherlands &middot; 2018&ndash;2022</p>
+                        <p class="work-description">Magister held 80% of the Dutch secondary education market. By the time I arrived, that had dropped to 60% and the 14-year-old codebase had no modernisation path. I led a top-task research programme that revealed 95% of daily usage concentrated in just 6&ndash;10 tasks. That finding became the foundation of a phased business case I presented to the board of directors.</p>
+                        <div class="work-meta">
+                            <span class="work-meta-label">Outcome:</span> Board approved a three-year roadmap after three years of inaction. &euro;3M+ development investment secured. Market share stabilised.<br>
+                            <span class="work-meta-label">What mattered:</span> Six interviews unlocked more investment than years of feature requests. The board needed evidence, not enthusiasm.
+                        </div>
+                        <a href="magister.html" class="work-link">Read full case study</a>
+                    </div>
+                </article>
+
+                <article class="work-item">
+                    <div class="work-index">02</div>
+                    <h3 class="work-title">Building AI Capability Across 40 People</h3>
+                    <p class="work-org">Alef Education &middot; 2023&ndash;present</p>
+                    <p class="work-description">The organisation had no AI literacy and no integration strategy. I built a training programme from scratch: a five-level prompting framework, hands-on workshops for the international team, research synthesis workflows, and automation tooling. The programme changed how teams make decisions, not just which tools they use.</p>
+                    <div class="work-meta">
+                        <span class="work-meta-label">Outcome:</span> 40+ colleagues trained. Research synthesis reduced from days to hours. Manual workflows cut by over 60%.<br>
+                        <span class="work-meta-label">What mattered:</span> Teaching people to think with AI at the start of a task, not reach for it as a last resort.
+                    </div>
+                    <a href="ai-capability.html" class="work-link">Read full case study</a>
+                </article>
+
+                <article class="work-item">
+                    <div class="work-index">03</div>
+                    <h3 class="work-title">Design System &amp; Product Operations</h3>
+                    <p class="work-org">Alef Education &middot; 2022&ndash;present</p>
+                    <p class="work-description">Sixty-plus templates with no governance. Product decisions made without structured user feedback. I consolidated the design system to 22 reusable components and built a feedback analytics dashboard connecting Usersnap qualitative data to Amplitude quantitative patterns. Two sides of the same problem: building the infrastructure that lets a design org operate at scale.</p>
+                    <div class="work-meta">
+                        <span class="work-meta-label">Outcome:</span> &pound;200K annual savings. 40% faster production. Decision-making reduced from 10 days to 3.<br>
+                        <span class="work-meta-label">What mattered:</span> The discipline to cut 60 templates to 22. And connecting the data nobody was connecting.
+                    </div>
+                    <a href="design-system-ops.html" class="work-link">Read full case study</a>
+                </article>
+
+                <article class="work-item work-item--wide">
+                    <div>
+                        <div class="work-index">04</div>
+                    </div>
+                    <div>
+                        <h3 class="work-title">Building a Cross-Cultural Design Organisation</h3>
+                        <p class="work-org">Alef Education &middot; 2022&ndash;present</p>
+                        <p class="work-description">Sixteen people across six nationalities and twelve markets. This is not a project case study. It is the story of building a team where critique is normal, growth is expected, and people choose to stay. I invested in structured certifications, adapted communication for cultural context, and built the rituals that create psychological safety through predictability.</p>
+                        <div class="work-meta">
+                            <span class="work-meta-label">Outcome:</span> Zero attrition over 18 months. Multiple junior-to-mid promotions. Design earned a seat at the product table.<br>
+                            <span class="work-meta-label">What mattered:</span> People stay where they are growing. That is the retention strategy.
+                        </div>
+                        <a href="cross-cultural-org.html" class="work-link">Read full case study</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Spine -->
+    <section id="career" class="career-section">
+        <div class="shape shape-circle career-shape"></div>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">30+ Years, Four Countries</h2>
+                <p class="section-intro">Thirty years. Four countries. Each role added a layer to how I think about design leadership.</p>
+            </div>
+            
+            <div class="career-timeline-wrapper">
+                <svg class="career-timeline-svg" viewBox="0 0 1000 40" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                    <!-- Connecting line -->
+                    <line x1="100" y1="20" x2="900" y2="20" stroke="#f0e6df" stroke-width="2"/>
+                    <!-- Dots at 10%, 30%, 50%, 70%, 90% -->
+                    <circle cx="100" cy="20" r="10" fill="none" stroke="#CC5500" stroke-width="2" opacity="0.3"/>
+                    <circle cx="100" cy="20" r="6" fill="#CC5500"/>
+                    <circle cx="300" cy="20" r="10" fill="none" stroke="#CC5500" stroke-width="2" opacity="0.3"/>
+                    <circle cx="300" cy="20" r="6" fill="#CC5500"/>
+                    <circle cx="500" cy="20" r="10" fill="none" stroke="#CC5500" stroke-width="2" opacity="0.3"/>
+                    <circle cx="500" cy="20" r="6" fill="#CC5500"/>
+                    <circle cx="700" cy="20" r="10" fill="none" stroke="#CC5500" stroke-width="2" opacity="0.3"/>
+                    <circle cx="700" cy="20" r="6" fill="#CC5500"/>
+                    <circle cx="900" cy="20" r="10" fill="none" stroke="#CC5500" stroke-width="2" opacity="0.3"/>
+                    <circle cx="900" cy="20" r="6" fill="#CC5500"/>
+                </svg>
+                <div class="career-labels">
+                    <div class="career-item">
+                        <div class="career-org">Sony Music Europe</div>
+                        <div class="career-role">Design Lead</div>
+                        <div class="career-years">1992&ndash;2005</div>
+                        <div class="career-sector">Music &middot; Netherlands</div>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-org">Cinnamon Interactive</div>
+                        <div class="career-role">Lead UX/UI Designer</div>
+                        <div class="career-years">2005&ndash;2014</div>
+                        <div class="career-sector">Government &middot; Netherlands</div>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-org">Freelance</div>
+                        <div class="career-role">UX/UI Designer</div>
+                        <div class="career-years">2014&ndash;2018</div>
+                        <div class="career-sector">incl. Deutsche Bank (BE), Aegon</div>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-org">Iddink Group</div>
+                        <div class="career-role">Senior UX Designer</div>
+                        <div class="career-years">2018&ndash;2022</div>
+                        <div class="career-sector">EdTech &middot; Netherlands</div>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-org">Alef Education</div>
+                        <div class="career-role">Head of Design</div>
+                        <div class="career-years">2022&ndash;present</div>
+                        <div class="career-sector">EdTech &middot; Abu Dhabi</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="logo-strip">
+                <div class="logo-strip-label">Organisations I have worked with</div>
+                <div class="logo-strip-logos">
+                    <!-- Sony Music - dot grid approximation -->
+                    <svg viewBox="0 0 100 100" fill="#3d3d3d" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sony Music">
+                        <circle cx="40" cy="5" r="3.5"/><circle cx="50" cy="5" r="3.5"/><circle cx="60" cy="5" r="3.5"/>
+                        <circle cx="30" cy="14" r="3.5"/><circle cx="40" cy="14" r="3.5"/><circle cx="50" cy="14" r="3.5"/><circle cx="60" cy="14" r="3.5"/><circle cx="70" cy="14" r="3.5"/>
+                        <circle cx="20" cy="23" r="3.5"/><circle cx="30" cy="23" r="3.5"/><circle cx="40" cy="23" r="3.5"/><circle cx="50" cy="23" r="3.5"/><circle cx="60" cy="23" r="3.5"/><circle cx="70" cy="23" r="3.5"/><circle cx="80" cy="23" r="3.5"/>
+                        <circle cx="15" cy="32" r="3.5"/><circle cx="25" cy="32" r="3.5"/><circle cx="35" cy="32" r="3.5"/><circle cx="45" cy="32" r="3.5"/><circle cx="55" cy="32" r="3.5"/><circle cx="65" cy="32" r="3.5"/><circle cx="75" cy="32" r="3.5"/><circle cx="85" cy="32" r="3.5"/>
+                        <circle cx="10" cy="41" r="3.5"/><circle cx="20" cy="41" r="3.5"/><circle cx="30" cy="41" r="3.5"/><circle cx="40" cy="41" r="3.5"/><circle cx="50" cy="41" r="3.5"/><circle cx="60" cy="41" r="3.5"/><circle cx="70" cy="41" r="3.5"/><circle cx="80" cy="41" r="3.5"/><circle cx="90" cy="41" r="3.5"/>
+                        <circle cx="10" cy="50" r="3.5"/><circle cx="20" cy="50" r="3.5"/><circle cx="30" cy="50" r="3.5"/><circle cx="40" cy="50" r="3.5"/><circle cx="50" cy="50" r="3.5"/><circle cx="60" cy="50" r="3.5"/><circle cx="70" cy="50" r="3.5"/><circle cx="80" cy="50" r="3.5"/><circle cx="90" cy="50" r="3.5"/>
+                        <circle cx="10" cy="59" r="3.5"/><circle cx="20" cy="59" r="3.5"/><circle cx="30" cy="59" r="3.5"/><circle cx="40" cy="59" r="3.5"/><circle cx="50" cy="59" r="3.5"/><circle cx="60" cy="59" r="3.5"/><circle cx="70" cy="59" r="3.5"/><circle cx="80" cy="59" r="3.5"/><circle cx="90" cy="59" r="3.5"/>
+                        <circle cx="15" cy="68" r="3.5"/><circle cx="25" cy="68" r="3.5"/><circle cx="35" cy="68" r="3.5"/><circle cx="45" cy="68" r="3.5"/><circle cx="55" cy="68" r="3.5"/><circle cx="65" cy="68" r="3.5"/><circle cx="75" cy="68" r="3.5"/><circle cx="85" cy="68" r="3.5"/>
+                        <circle cx="20" cy="77" r="3.5"/><circle cx="30" cy="77" r="3.5"/><circle cx="40" cy="77" r="3.5"/><circle cx="50" cy="77" r="3.5"/><circle cx="60" cy="77" r="3.5"/><circle cx="70" cy="77" r="3.5"/><circle cx="80" cy="77" r="3.5"/>
+                        <circle cx="30" cy="86" r="3.5"/><circle cx="40" cy="86" r="3.5"/><circle cx="50" cy="86" r="3.5"/><circle cx="60" cy="86" r="3.5"/><circle cx="70" cy="86" r="3.5"/>
+                        <circle cx="40" cy="95" r="3.5"/><circle cx="50" cy="95" r="3.5"/><circle cx="60" cy="95" r="3.5"/>
+                    </svg>
+                    
+                    <!-- Cinnamon Interactive - actual logo paths -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 545 185" role="img" aria-label="Cinnamon Interactive">
+                        <path d="M51.863 147.84c-1.41.575-5.98 2.128-11.566 2.128-11.566 0-16.023-7.538-16.023-20.427 0-10.646 3.103-19.565 15.685-19.565 8.8 0 12.242 3.913 12.863 8.516h-6.77c-.282-1.899-1.467-5.812-6.601-5.812-7.73 0-8.97 9.495-8.97 15.422 0 6.445.676 19.162 11.565 19.162 4.908 0 8.35-2.014 9.817-3.107v3.682Zm26.953-29.636c0-4.833-.169-4.89-5.642-5.639v-1.266l11.848-1.323v39.36h-6.206v-31.132Zm35.754-.23c0-5.351-.79-5.121-5.641-6.1v-1.265h11.904l17.772 31.304h.112v-31.304h3.555v38.727h-5.416l-18.618-32.743h-.113v32.743h-3.554v-31.362Zm56.968 0c0-5.351-.79-5.121-5.641-6.1v-1.265H177.8l17.772 31.304h.113v-31.304h3.554v38.727h-5.416l-18.618-32.743h-.113v32.743h-3.554v-31.362Zm67.179-.115 6.431 16.803H232.68l6.037-16.803Zm-14.725 31.477h3.498l4.231-11.97h14.386l4.232 11.97h5.867l-13.766-38.727h-10.606v1.266c2.257.345 4.344.402 4.344 2.704 0 .403-.62 2.417-.959 3.395l-11.227 31.362Zm57.249-31.362c0-5.351-.79-5.121-5.585-6.1v-1.265h12.807l11.17 31.764h.113l10.945-31.764h7.617v38.727h-5.642v-34.24h-.113l-11.848 34.24H296.7l-11.79-33.893h-.113v33.893h-3.555v-31.362Zm70.339 12.142c0-7.768.677-17.436 9.422-17.436 8.575 0 9.083 9.898 9.083 17.436 0 7.365-.339 17.148-9.083 17.148-8.576 0-9.422-10.012-9.422-17.148Zm9.422 19.852c11.734 0 15.289-7.653 15.289-19.852 0-12.372-3.555-20.14-15.289-20.14-12.243 0-15.628 7.768-15.628 20.14 0 12.314 3.724 19.852 15.628 19.852Zm42.637-31.994c0-5.351-.79-5.121-5.642-6.1v-1.265h11.904l17.772 31.304h.112v-31.304h3.555v38.727h-5.416l-18.618-32.743h-.113v32.743h-3.554v-31.362Z" fill="#3d3d3d"/>
+                        <path d="M235.385 165.38h2.79v19.25h-2.79v-19.25Zm23.964 0h3.486l7.588 15.065h.057v-15.064h2.51v19.249h-3.292l-7.783-15.427h-.056v15.427h-2.51v-19.25Zm37.381 2.232h-4.798v-2.231h12.385v2.23h-4.797v17.019h-2.79v-17.018Zm26.557-2.232h10.629v2.232h-7.84v5.887h7.45v2.231h-7.45v6.668h8.091v2.232h-10.88v-19.25Zm33.448 2.232h2.26c2.064 0 3.375.81 3.375 3.152 0 2.568-2.064 3.348-4.016 3.348h-1.619v-6.5Zm-2.79 17.018h2.79v-8.286h1.59c2.678 0 3.013 1.255 3.794 4.017l1.172 4.269h2.538l-1.143-5.357c-.418-2.009-.698-3.683-3.32-4.24v-.056c1.952-.474 3.794-1.534 3.794-4.547 0-3.766-2.623-5.05-5.636-5.05h-5.579v19.25Zm38.024-16.683h.055l2.65 8.955h-5.495l2.79-8.955Zm-8.258 16.683h2.957l1.87-5.497h6.89l1.896 5.497h2.957l-6.583-19.25h-3.431l-6.556 19.25Zm45.304-.837c-.809.362-2.79 1.143-5.05 1.143-4.24 0-7.671-2.622-7.671-10.154 0-5.106 1.674-9.708 7.281-9.708 3.934 0 6.194 2.287 6.194 5.579h-3.237c0-1.172-.335-3.348-3.04-3.348-3.628 0-4.13 4.409-4.13 7.03 0 4.827 1.172 8.37 5.161 8.37 2.371 0 3.99-1.2 4.492-1.507v2.595Zm22.512-16.181h-4.798v-2.231h12.386v2.23h-4.799v17.019h-2.789v-17.018Zm26.557-2.232h2.79v19.25h-2.79v-19.25Zm21.256 0h2.93l5.245 16.069h.056l5.3-16.068h2.93l-6.556 19.249h-3.46l-6.444-19.25Zm34.956 0h10.629v2.232h-7.84v5.887h7.45v2.231h-7.45v6.668h8.09v2.232h-10.88v-19.25Z" fill="#3d3d3d"/>
+                        <path d="M41.76 17.655c-1.853 1.183-3.787 1.649-4.119 1.008-.342-.658.923-2.166 2.665-3.278s3.538-1.56 3.992-.973c.44.57-.686 2.06-2.538 3.243ZM67.03 6.517c-2.08.538-3.072-.034-2.367-1.282.624-1.115 2.752-2.474 4.992-3.188 2.127-.561 3.29-.096 2.617 1.122-.994 1.377-3.106 2.794-5.243 3.348ZM15.554 39.39c-1.268.02-1.202-1.228.089-2.85 1.48-1.66 3.494-2.948 4.878-3.116 1.426-.113 1.524 1.032.157 2.694-1.407 1.641-3.58 3.027-5.124 3.272Zm29.098-17.218c-2.072 1.323-4.276 1.769-4.716.922-.398-.767.973-2.508 2.908-3.744 1.936-1.236 3.978-1.675 4.507-.99.584.754-.625 2.488-2.699 3.812Zm17.388-7.161c-2.168.292-3.13-.515-2.313-1.832.991-1.477 3.3-2.951 5.423-3.463 2.184-.527 3.281.122 2.61 1.642-.754 1.365-3.388 3.048-5.72 3.653ZM24.742 38.83c-1.53-.114-1.66-1.454-.38-3.067 1.484-1.79 3.672-3.187 5.423-3.462 1.536-.185 1.859 1.03.677 2.877-1.534 1.864-3.904 3.379-5.72 3.652Zm23.586-10.924c-2.353 1.503-4.91 1.9-5.472.816-.507-.978.988-3.029 3.164-4.418 2.178-1.39 4.537-1.8 5.21-.93.748.966-.55 3.03-2.902 4.532Zm8-3.167c-2.398.5-3.35-.691-2.104-2.437.9-1.58 3.42-3.188 5.655-3.612 2.308-.435 3.387.495 2.426 2.232-.99 1.794-3.738 3.549-5.976 3.817Zm-20.64 13.182c-1.951.215-2.378-1.312-.987-3.15 1.33-1.855 3.98-3.548 5.924-3.784 1.836-.22 2.508 1.149 1.327 2.933-1.329 2.01-4.224 3.858-6.264 4Zm66.38-33.613c-2.562 1.637-6.756 2.548-8.688 1.873-1.84-.643-1.097-2.548 1.24-4.04 2.484-1.588 6.16-2.503 8.228-2.007 2.173.52 1.945 2.435-.78 4.174ZM36.861 45.954c-2.563 1.636-5.291 1.612-5.643-.073-.334-1.604 1.594-4.267 3.933-5.76 2.485-1.586 4.973-1.745 5.536-.288.593 1.531-1.103 4.382-3.826 6.121ZM20.519 56.391c-2.562 1.636-4.924 1.377-4.88-.56.044-1.846 2.271-4.7 4.608-6.193 2.483-1.585 4.677-1.554 4.862.145.197 1.783-1.866 4.869-4.59 6.608Zm65.367-41.747c-2.723 1.74-6.549 2.415-8.085 1.487-1.462-.883-.423-2.978 2.06-4.565 2.34-1.493 5.718-2.22 7.41-1.483 1.776.774 1.18 2.923-1.385 4.561Zm-16.34 10.437c-2.725 1.739-6.182 2.18-7.323.999-1.085-1.124.25-3.41 2.736-4.995 2.338-1.494 5.418-2.03 6.734-1.053 1.381 1.028.415 3.411-2.148 5.05ZM53.203 35.518c-2.724 1.739-5.817 1.945-6.56.511-.707-1.364.927-3.84 3.41-5.426 2.484-1.587 5.271-1.935 6.213-.719.988 1.279-.34 3.895-3.063 5.634ZM4.338 66.725C1.614 68.464-.38 67.97.06 65.778c.42-2.085 2.944-5.127 5.428-6.714 2.339-1.493 4.233-1.272 4.042.668-.2 2.037-2.63 5.356-5.193 6.993ZM65.89 35.82c-3.3.23-4.68-1.494-3.363-3.898 1.015-2.03 4.259-4.103 6.93-4.426 3.024-.367 4.852 1.21 3.882 3.567-.83 2.339-4.27 4.535-7.449 4.757ZM40.178 52.24c-2.539-.115-3.188-2.445-1.58-5.037 1.587-2.395 4.79-4.565 7.262-4.637 2.566-.075 3.423 2.123 2.12 4.692-1.536 2.79-5.156 5.102-7.802 4.983Zm19.497-6.621c-3.217 2.053-6.949 2.142-7.917.272-.973-1.876.82-4.976 3.719-6.825 2.897-1.85 6.294-2.067 7.587-.394 1.288 1.665-.172 4.892-3.389 6.947Zm26.958-11.127c-3.732.144-5.879-1.659-5.295-4.197 1.146-2.487 4.799-4.82 8.19-5.231 3.995-.385 6.573 1.141 5.977 3.762-.577 2.513-4.695 5.143-8.872 5.666ZM28.78 71.44c-2.425-.69-2.718-3.677-.87-7.023 2.174-3.143 5.458-5.243 8.192-5.232 2.538.545 3.257 3.259 1.546 6.59-2.239 3.575-5.945 5.943-8.868 5.665Zm40.455-10.903c-3.944 2.518-8.761 2.162-10.195-.599-1.42-2.74.547-6.82 4.02-9.036 3.473-2.219 7.795-2.158 9.685.285 1.903 2.461.431 6.831-3.51 9.35ZM115.09 32.53c-5.277.104-8.763-1.895-8.593-4.65.195-2.844 3.947-5.24 9.414-6.011 5.112-.62 9.176 1.012 9.498 4.07-.635 3.321-4.965 6.085-10.32 6.591ZM13.746 97.251c-2.403-1.73-2.174-6.102.323-10.342 2.798-4.508 6.548-6.904 9.202-5.876 2.778.87 3.344 4.734.562 9.775-2.715 4.922-7.052 7.419-10.087 6.443Zm70.63-13.072c-5.094 3.253-11.804 1.858-14.273-2.901-2.129-4.106-.028-9.882 4.31-12.653 4.339-2.77 10.208-2.084 13.038 1.574 3.28 4.242 2.022 10.724-3.074 13.98Z" fill="#3d3d3d"/>
+                    </svg>
+                    
+                    <!-- Deutsche Bank - square with diagonal slash -->
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deutsche Bank">
+                        <rect x="2" y="2" width="36" height="36" stroke="#3d3d3d" stroke-width="3"/>
+                        <line x1="8" y1="32" x2="32" y2="8" stroke="#3d3d3d" stroke-width="4"/>
+                    </svg>
+                    
+                    <!-- Aegon -->
+                    <svg viewBox="0 0 100 36" fill="#3d3d3d" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aegon">
+                        <text x="0" y="26" font-family="'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0.02em">aegon</text>
+                    </svg>
+                    
+                    <!-- Sanoma Learning / Iddink Group -->
+                    <svg viewBox="0 0 88 22" fill="#3d3d3d" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sanoma Learning">
+                        <text x="0" y="17" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="0.03em">sanoma</text>
+                    </svg>
+                    
+                    <!-- Alef Education -->
+                    <svg viewBox="0 0 64 66" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alef Education">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M32.1361 51.9263C27.9484 51.9263 24.0177 50.2939 21.0672 47.3294C18.2004 44.4494 16.6339 40.6545 16.6563 36.6434C16.6897 30.5827 20.4937 24.9626 26.1225 22.6589L26.2867 22.5917V17.6776L25.9433 17.785C17.6913 20.3638 11.9577 28.1949 12.0002 36.8281C12.0542 47.7188 21.102 56.5786 32.1699 56.5786H38.9528L38.9235 56.2888C38.6811 53.8019 36.611 51.9263 34.1083 51.9263H32.1361Z" fill="#3d3d3d"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M37.446 17.6883V22.6147L37.6089 22.6824C43.2716 25.0464 47.077 30.7991 47.077 36.9974V51.7433C47.077 54.2444 48.9536 56.3128 51.4426 56.5559L51.7326 56.5843V37.0307C51.7326 28.3149 45.9998 20.4061 37.7914 17.798L37.446 17.6883Z" fill="#3d3d3d"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M29.5385 9.17292V37.3664C29.5385 38.6488 30.5827 39.6926 31.8661 39.6926C33.1504 39.6926 34.1946 38.6488 34.1946 37.3664V9.17292C34.1946 7.89013 33.1504 6.84634 31.8661 6.84634C30.5827 6.84634 29.5385 7.89013 29.5385 9.17292Z" fill="#3d3d3d"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M34.6113 2.77489C33.5781 3.2264 32.7704 3.45216 32.2215 3.45216C31.8341 3.45216 31.4143 3.32328 30.9299 3.06508C31.5433 2.35536 32.0926 2.00028 32.5444 2.00028C32.8673 2.00028 33.0933 2.12915 33.2552 2.35536C33.5452 1.87095 33.7071 1.48387 33.7071 1.16123C33.7071 0.387077 33.2552 0 32.3185 0C31.5757 0 30.8654 0.387077 30.2196 1.16123C29.6058 1.90339 29.3154 2.678 29.3154 3.4846C29.3154 3.96856 29.6383 4.45252 30.2516 4.90404C29.7673 5.48488 29.3799 6.1946 29.1215 7.03364C30.639 6.03328 32.2865 5.32356 34.1265 4.93648L34.6113 2.77489Z" fill="#3d3d3d"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">What Colleagues Say</h2>
+                <p class="section-intro">Testimonials from Philip Chesney and Edwin Persoon are included in their respective case studies: <a href="design-system-ops.html#testimonial-chesney" style="color:var(--orange)">Design System &amp; Product Operations</a> and <a href="magister.html#testimonial-persoon" style="color:var(--orange)">Magister</a>.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Approach -->
+    <section id="approach" class="approach-section">
+        <div class="shape shape-circle approach-shape"></div>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">How I Work</h2>
+                <p class="section-intro">I trained in the tradition of the Swiss International Typographic Style and Spiekermann&rsquo;s typographic principles. That foundation shapes how I think about every system I build: clarity is a functional requirement, not a stylistic preference.</p>
+            </div>
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <div class="approach-label">Systems over surfaces</div>
+                    <p class="approach-text">I build design systems, operational processes, and team structures that outlast any single project or person. When I leave an organisation, things should be easier to run than when I arrived. That is the measure.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-label">Clarity enables autonomy</div>
+                    <p class="approach-text">I lead multicultural teams by setting clear goals and creating genuine space for critique. My current team spans eight nationalities. They do not need close management. They need context, honest feedback, and trust that their decisions will be respected.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-label">Evidence before opinion</div>
+                    <p class="approach-text">I present to boards with research, not concept decks. When a product needed a new direction, I started with what users actually did. Opinion earns its seat at the table; it does not automatically occupy it.</p>
+                </div>
+                <div class="approach-item">
+                    <div class="approach-label">AI as an organisational capability</div>
+                    <p class="approach-text">I have integrated AI into design workflows, built training programmes for cross-functional teams, and seen what changes when people learn to think with AI rather than simply deploy it. The value is not in the tool. It is in the decision-making shift that follows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Writing & Credentials -->
+    <section id="credentials" class="writing-section">
+        <div class="shape shape-circle writing-shape"></div>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Credentials &amp; Writing</h2>
+            </div>
+            <div class="writing-grid">
+                <div class="writing-column">
+                    <h3>Professional Development</h3>
+                    <ul class="writing-items">
+                        <li>UX Management Certification &mdash; Nielsen Norman Group</li>
+                        <li>Strategic Design Leadership Masterclass &mdash; TU Delft (96% distinction)</li>
+                        <li>Design Sprint Certification &mdash; AJ&amp;Smart</li>
+                        <li>Information Architecture &amp; Facilitating UX Workshops &mdash; Nielsen Norman Group</li>
+                        <li>Top 10% distinction across multiple UX courses &mdash; Interaction Design Foundation</li>
+                    </ul>
+                </div>
+                <div class="writing-column">
+                    <h3>Speaking &amp; Teaching</h3>
+                    <ul class="writing-items">
+                        <li>Active <a href="https://www.linkedin.com/in/doncrowley/" target="_blank" rel="noopener noreferrer">LinkedIn contributor</a> on AI integration, design systems, and leadership &mdash; publishing 3&ndash;4 posts weekly, consistent readership among European design leaders</li>
+                        <li>Guest Lecturer &mdash; The Hague University of Applied Sciences, design strategy and professional practice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="shape shape-blob contact-shape"></div>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Senior design leadership roles in Europe.</h2>
+            </div>
+            <div class="contact-content">
+                <p class="contact-availability">Available for Head of Design, Director of Design, and VP of Design roles with European organisations. I work best in complex environments where design has room to grow from a delivery function into a strategic one.</p>
+                <div class="contact-info">
+                    <p>Email: <a href="#" id="email-link" data-name="dccrowley" data-domain="gmail" data-tld="com">Loading...</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/doncrowley/" target="_blank" rel="noopener noreferrer">linkedin.com/in/doncrowley</a></p>
+                </div>
+                <div class="contact-details">
+                    Irish citizen with full EU work rights &middot; Fluent Dutch &middot; Property in the Netherlands<br>
+                    Currently based in Abu Dhabi, UAE &middot; Available for relocation or remote
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Don Crowley. Built with care for typography and accessibility.</p>
+    </footer>
+
+    <script>
+        // Scroll progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+            
+            const navbar = document.getElementById('navbar');
+            if (winScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                // Close mobile nav if open
+                const navLinks = document.getElementById('navLinks');
+                const navToggle = document.getElementById('navToggle');
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Mobile nav toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            const isOpen = navLinks.classList.toggle('open');
+            this.classList.toggle('active');
+            this.setAttribute('aria-expanded', isOpen);
+        });
+        
+        // Email obfuscation
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailLink = document.getElementById('email-link');
+            if (emailLink) {
+                const name = emailLink.getAttribute('data-name');
+                const domain = emailLink.getAttribute('data-domain');
+                const tld = emailLink.getAttribute('data-tld');
+                const email = name + '@' + domain + '.' + tld;
+                emailLink.href = 'mailto:' + email;
+                emailLink.textContent = email;
+                emailLink.removeAttribute('data-name');
+                emailLink.removeAttribute('data-domain');
+                emailLink.removeAttribute('data-tld');
+            }
+        });
+
+        // Console signature
+        console.log('%c Don Crowley', 'font-family: IBM Plex Serif; font-size: 24px; font-weight: bold; color: #CC5500;');
+        console.log('%c Design Leader', 'font-family: IBM Plex Sans; font-size: 14px; color: #2C3E50;');
+        console.log('%c UX Strategy \u00B7 Design Operations \u00B7 Team Leadership', 'font-family: IBM Plex Sans; font-size: 12px; color: #666;');
+    </script>
+</body>
+</html>
