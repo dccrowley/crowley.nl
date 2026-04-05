@@ -18,6 +18,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "$DEPLOY_KEY_B64" | tr -d ' \r\n' | base64 -d > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
+          ssh-keygen -l -f ~/.ssh/deploy_key
           ssh-keyscan -p 22 ftp.crowley.nl >> ~/.ssh/known_hosts
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/deploy_key -p 22 -o IdentitiesOnly=yes -o StrictHostKeyChecking=no" \
