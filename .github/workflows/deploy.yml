@@ -11,16 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Load SSH key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-
       - name: Deploy via rsync
+        env:
+          DEPLOY_KEY_B64: ${{ secrets.DEPLOY_KEY }}
         run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY_B64" | base64 -d > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p 22 ftp.crowley.nl >> ~/.ssh/known_hosts
           rsync -avz --delete \
-            -e "ssh -p 22" \
+            -e "ssh -i ~/.ssh/deploy_key -p 22" \
             ./ \
             crowleynl@ftp.crowley.nl:/srv/home/crowleynl/domains/crowley.nl/htdocs/www/ \
             --exclude='.git' \
