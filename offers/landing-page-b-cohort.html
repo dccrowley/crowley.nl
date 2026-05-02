@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Leadership Cohort | Don Crowley</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --stone-50: #fafaf9; --stone-100: #f5f5f4; --stone-200: #e7e5e4;
+            --stone-400: #a8a29e; --stone-500: #78716c; --stone-600: #57534e;
+            --stone-700: #44403c; --stone-800: #292524; --stone-900: #1c1917;
+            --accent: #0f766e; --accent-light: #14b8a6;
+            --accent-bg: #ccfbf1; --accent-subtle: #f0fdfa;
+            --font-serif: 'IBM Plex Serif', Georgia, serif;
+            --font-sans: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--stone-800); background: var(--stone-50); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(250,250,249,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--stone-200); }
+        .nav-name { font-family: var(--font-serif); font-size: 20px; color: var(--stone-900); font-weight: 400; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-link { font-size: 14px; color: var(--stone-500); text-decoration: none; transition: color 0.2s; }
+        .nav-link:hover { color: var(--stone-800); }
+        .nav-cta { font-size: 14px; font-weight: 500; color: var(--stone-50); background: var(--stone-900); padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+        .nav-cta:hover { background: var(--stone-700); }
+
+        .hero { padding: 140px 24px 80px; max-width: 720px; margin: 0 auto; }
+        .hero-badge { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); padding: 6px 14px; border-radius: 100px; margin-bottom: 28px; }
+        .hero h1 { font-family: var(--font-serif); font-size: clamp(34px, 5.5vw, 50px); line-height: 1.15; color: var(--stone-900); letter-spacing: -0.01em; margin-bottom: 24px; font-weight: 400; }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-body { font-size: 18px; color: var(--stone-600); line-height: 1.7; max-width: 560px; margin-bottom: 36px; }
+        .hero-cta { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--stone-50); background: var(--stone-900); padding: 16px 32px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+        .hero-cta:hover { background: var(--accent); transform: translateY(-1px); }
+        .hero-cta svg { width: 18px; height: 18px; }
+        .hero-meta { margin-top: 20px; font-size: 14px; color: var(--stone-400); }
+
+        .stat-bar { background: var(--stone-900); padding: 48px 24px; }
+        .stat-bar-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+        .stat-number { font-family: var(--font-mono); font-size: clamp(34px, 5vw, 46px); font-weight: 500; color: var(--accent-light); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 14px; color: var(--stone-400); line-height: 1.4; }
+
+        .section-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+        section h2 { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 36px); line-height: 1.2; color: var(--stone-900); letter-spacing: -0.01em; margin-bottom: 24px; font-weight: 400; }
+
+        .problem { padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .pain-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .pain-list li { position: relative; padding-left: 28px; font-size: 16px; color: var(--stone-700); line-height: 1.65; }
+        .pain-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-bg); border: 2px solid var(--accent); }
+
+        .how-it-works { padding: 80px 24px; background: var(--stone-100); }
+        .how-inner { max-width: 720px; margin: 0 auto; }
+        .how-intro { color: var(--stone-600); font-size: 17px; margin-bottom: 48px; max-width: 560px; }
+        .week-grid { display: grid; gap: 2px; }
+        .week { background: var(--stone-50); padding: 28px 32px; display: grid; grid-template-columns: 80px 1fr; gap: 20px; align-items: start; transition: background 0.2s; }
+        .week:first-child { border-radius: 10px 10px 0 0; }
+        .week:last-child { border-radius: 0 0 10px 10px; }
+        .week:hover { background: white; }
+        .week-label { font-family: var(--font-mono); font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; padding-top: 3px; font-weight: 500; }
+        .week-title { font-weight: 600; font-size: 15px; color: var(--stone-900); margin-bottom: 6px; }
+        .week-desc { font-size: 15px; color: var(--stone-600); line-height: 1.55; }
+
+        .pricing-anchor { padding: 48px 24px; text-align: center; background: var(--accent-subtle); border-top: 1px solid var(--accent-bg); border-bottom: 1px solid var(--accent-bg); }
+        .price { font-family: var(--font-mono); font-size: 40px; color: var(--stone-900); font-weight: 500; }
+        .price-note { font-size: 15px; color: var(--stone-500); margin-top: 8px; }
+        .price-founding { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 500; color: var(--accent); background: var(--accent-bg); padding: 6px 16px; border-radius: 100px; }
+        .price-detail { font-size: 14px; color: var(--stone-400); margin-top: 12px; }
+
+        .why-peers { padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .peer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .peer-card { background: var(--stone-100); border-radius: 10px; padding: 24px; }
+        .peer-card-title { font-weight: 600; font-size: 15px; color: var(--stone-900); margin-bottom: 6px; }
+        .peer-card-desc { font-size: 14px; color: var(--stone-600); line-height: 1.5; }
+
+        .about { padding: 80px 24px; background: var(--stone-100); }
+        .about-inner { max-width: 720px; margin: 0 auto; }
+        .about p { color: var(--stone-600); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+
+        .cta-section { padding: 80px 24px; text-align: center; background: var(--stone-900); }
+        .cta-section h2 { color: var(--stone-50); margin-bottom: 16px; }
+        .cta-section p { color: var(--stone-400); font-size: 16px; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-main { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color: var(--stone-900); background: var(--accent-light); padding: 18px 40px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+        .cta-main:hover { background: #2dd4bf; transform: translateY(-2px); }
+        .cta-note { color: var(--stone-400); font-size: 13px; margin-top: 16px; }
+
+        footer { padding: 32px 24px; text-align: center; font-size: 13px; color: var(--stone-400); background: var(--stone-900); border-top: 1px solid var(--stone-800); }
+
+        @media (max-width: 640px) {
+            .stat-bar-inner { grid-template-columns: 1fr; gap: 24px; }
+            .peer-grid { grid-template-columns: 1fr; }
+            .week { grid-template-columns: 60px 1fr; padding: 24px 20px; gap: 16px; }
+            .nav-link { display: none; }
+        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-badge { animation: fadeUp 0.6s ease 0.1s both; }
+        .hero h1 { animation: fadeUp 0.6s ease 0.2s both; }
+        .hero-body { animation: fadeUp 0.6s ease 0.35s both; }
+        .hero-cta { animation: fadeUp 0.6s ease 0.5s both; }
+    </style>
+</head>
+<body>
+<nav><div class="nav-name">Don Crowley</div><div class="nav-links"><a href="landing-page-a-coaching.html" class="nav-link">1:1 Coaching</a><a href="landing-page-c-sprint.html" class="nav-link">Sprints</a><a href="#book" class="nav-cta">Book a Call</a></div></nav>
+
+<section class="hero">
+    <span class="hero-badge">Leadership Cohort</span>
+    <h1>Figure out AI with leaders <em>who face the same decisions you do.</em></h1>
+    <p class="hero-body">A 4-week peer programme for 4 to 6 senior leaders from different companies. Learn from each other's experiments, mistakes, and breakthroughs.</p>
+    <a href="#book" class="hero-cta">Apply for the next cohort <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg></a>
+    <p class="hero-meta">4 sessions. 2 hours each. 4-6 leaders per cohort. Next cohort starts soon.</p>
+</section>
+
+<section class="stat-bar"><div class="stat-bar-inner">
+    <div class="stat-item"><div class="stat-number">42%</div><div class="stat-label">of senior leaders prefer learning<br>in small peer groups</div></div>
+    <div class="stat-item"><div class="stat-number">61%</div><div class="stat-label">rate themselves as<br>AI beginners</div></div>
+    <div class="stat-item"><div class="stat-number">10%</div><div class="stat-label">want workshops.<br>The rest want something better.</div></div>
+</div></section>
+
+<section class="problem">
+    <div class="section-tag">The Problem With Learning Alone</div>
+    <h2>AI adoption is a leadership challenge. It helps to have company.</h2>
+    <ul class="pain-list">
+        <li>You read the articles. You watch the demos. But you still feel like everyone else is further ahead than you are.</li>
+        <li>Your board is asking about AI strategy. Your team is waiting for direction. You need clarity, not another tutorial.</li>
+        <li>The best insights come from leaders who have tried things and can tell you what actually worked. Not from a slide deck.</li>
+        <li>You want honest conversation with peers who face the same pressures, not a classroom where you perform competence.</li>
+    </ul>
+</section>
+
+<section class="how-it-works"><div class="how-inner">
+    <div class="section-tag">How It Works</div>
+    <h2>Four weeks. Four sessions. Real progress.</h2>
+    <p class="how-intro">Each session is facilitated, structured, and focused on decisions. You bring your real business challenges. The group helps you think them through.</p>
+    <div class="week-grid">
+        <div class="week"><div class="week-label">Week 1</div><div><div class="week-title">Where is everyone starting?</div><div class="week-desc">Each leader shares their current AI reality. We map patterns across the group and identify shared challenges. You realise you are not as far behind as you thought.</div></div></div>
+        <div class="week"><div class="week-label">Week 2</div><div><div class="week-title">What should we each focus on?</div><div class="week-desc">Using a simple prioritisation framework, each leader picks their highest-impact focus area. The group pressure-tests each other's choices.</div></div></div>
+        <div class="week"><div class="week-label">Week 3</div><div><div class="week-title">What have we tried?</div><div class="week-desc">Each leader reports back on one experiment they ran. What worked, what failed, what surprised them. The group learns from 4 to 6 real-world tests, not just one.</div></div></div>
+        <div class="week"><div class="week-label">Week 4</div><div><div class="week-title">What happens next?</div><div class="week-desc">Each leader builds a 90-day plan. The group commits to accountability check-ins. You leave with a strategy, a network, and the confidence to move.</div></div></div>
+    </div>
+</div></section>
+
+<section class="pricing-anchor">
+    <div class="price">EUR 3,500 per seat</div>
+    <div class="price-note">4 sessions over 4 weeks, plus pre-programme assessment and peer network access</div>
+    <div class="price-founding">Founding cohort rate: EUR 2,500 per seat</div>
+    <div class="price-detail">4-6 leaders per cohort. Each cohort is carefully composed for relevance.</div>
+</section>
+
+<section class="why-peers">
+    <div class="section-tag">Why Peer Learning Works</div>
+    <h2>You learn faster when the person next to you has tried it.</h2>
+    <div class="peer-grid">
+        <div class="peer-card"><div class="peer-card-title">No performing</div><div class="peer-card-desc">Everyone is in the same position. Nobody is pretending to have it figured out. The honesty accelerates everything.</div></div>
+        <div class="peer-card"><div class="peer-card-title">4-6x the experiments</div><div class="peer-card-desc">Each person runs a different test. You get the learning from all of them without bearing all the risk.</div></div>
+        <div class="peer-card"><div class="peer-card-title">Real accountability</div><div class="peer-card-desc">When you tell 5 other leaders you will try something this week, you actually do it. Peer pressure, the productive kind.</div></div>
+        <div class="peer-card"><div class="peer-card-title">A lasting network</div><div class="peer-card-desc">You leave with 4-5 senior contacts who understand your challenges. That network keeps paying dividends long after the programme ends.</div></div>
+    </div>
+</section>
+
+<section class="about"><div class="about-inner">
+    <div class="section-tag">Your Facilitator</div>
+    <h2>Don Crowley</h2>
+    <p>I have spent years helping organisations navigate change at the intersection of technology, people, and process. I facilitate these cohorts because I have seen that leaders learn best from each other, not from consultants.</p>
+    <p>My job is to structure the conversation, bring the frameworks, and make sure every session moves you closer to a real decision. Your job is to show up honestly and do the work between sessions.</p>
+</div></section>
+
+<section class="cta-section" id="book">
+    <h2>Join the next cohort</h2>
+    <p>Spaces are limited to 6 leaders per cohort. Book a short call to see if it is the right fit for you and for the group.</p>
+    <a href="https://calendly.com/YOUR-LINK" class="cta-main">Apply for a Seat</a>
+    <div class="cta-note">15-minute call. We will talk about your situation and whether the cohort is a good match.</div>
+</section>
+<footer>&copy; 2026 Don Crowley. All rights reserved.</footer>
+</body>
+</html>

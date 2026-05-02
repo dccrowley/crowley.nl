@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Sprint | Don Crowley</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --stone-50: #fafaf9; --stone-100: #f5f5f4; --stone-200: #e7e5e4;
+            --stone-400: #a8a29e; --stone-500: #78716c; --stone-600: #57534e;
+            --stone-700: #44403c; --stone-800: #292524; --stone-900: #1c1917;
+            --accent: #1d4ed8; --accent-light: #3b82f6;
+            --accent-bg: #dbeafe; --accent-subtle: #eff6ff;
+            --font-serif: 'IBM Plex Serif', Georgia, serif;
+            --font-sans: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--stone-800); background: var(--stone-50); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(250,250,249,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--stone-200); }
+        .nav-name { font-family: var(--font-serif); font-size: 20px; color: var(--stone-900); font-weight: 400; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-link { font-size: 14px; color: var(--stone-500); text-decoration: none; transition: color 0.2s; }
+        .nav-link:hover { color: var(--stone-800); }
+        .nav-cta { font-size: 14px; font-weight: 500; color: var(--stone-50); background: var(--stone-900); padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+        .nav-cta:hover { background: var(--stone-700); }
+
+        .hero { padding: 140px 24px 80px; max-width: 720px; margin: 0 auto; }
+        .hero-badge { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); padding: 6px 14px; border-radius: 100px; margin-bottom: 28px; }
+        .hero h1 { font-family: var(--font-serif); font-size: clamp(34px, 5.5vw, 50px); line-height: 1.15; color: var(--stone-900); letter-spacing: -0.01em; margin-bottom: 24px; font-weight: 400; }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-body { font-size: 18px; color: var(--stone-600); line-height: 1.7; max-width: 560px; margin-bottom: 36px; }
+        .hero-cta { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--stone-50); background: var(--stone-900); padding: 16px 32px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+        .hero-cta:hover { background: var(--accent); transform: translateY(-1px); }
+        .hero-cta svg { width: 18px; height: 18px; }
+        .hero-meta { margin-top: 20px; font-size: 14px; color: var(--stone-400); }
+
+        .stat-bar { background: var(--stone-900); padding: 48px 24px; }
+        .stat-bar-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+        .stat-number { font-family: var(--font-mono); font-size: clamp(34px, 5vw, 46px); font-weight: 500; color: var(--accent-light); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 14px; color: var(--stone-400); line-height: 1.4; }
+
+        .section-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+        section h2 { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 36px); line-height: 1.2; color: var(--stone-900); letter-spacing: -0.01em; margin-bottom: 24px; font-weight: 400; }
+
+        .problem { padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .pain-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .pain-list li { position: relative; padding-left: 28px; font-size: 16px; color: var(--stone-700); line-height: 1.65; }
+        .pain-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-bg); border: 2px solid var(--accent); }
+
+        .timeline { padding: 80px 24px; background: var(--stone-100); }
+        .timeline-inner { max-width: 720px; margin: 0 auto; }
+        .timeline-intro { color: var(--stone-600); font-size: 17px; margin-bottom: 48px; max-width: 560px; }
+        .phase-grid { display: grid; gap: 24px; }
+        .phase { background: var(--stone-50); border-radius: 10px; padding: 32px; border-left: 4px solid var(--accent-bg); transition: border-color 0.2s; }
+        .phase:hover { border-left-color: var(--accent); }
+        .phase-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        .phase-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); padding: 4px 12px; border-radius: 100px; }
+        .phase-when { font-size: 13px; color: var(--stone-400); }
+        .phase-title { font-weight: 600; font-size: 17px; color: var(--stone-900); margin-bottom: 8px; }
+        .phase-desc { font-size: 15px; color: var(--stone-600); line-height: 1.6; }
+
+        .pricing-anchor { padding: 48px 24px; text-align: center; background: var(--accent-subtle); border-top: 1px solid var(--accent-bg); border-bottom: 1px solid var(--accent-bg); }
+        .price { font-family: var(--font-mono); font-size: 40px; color: var(--stone-900); font-weight: 500; }
+        .price-note { font-size: 15px; color: var(--stone-500); margin-top: 8px; }
+        .price-founding { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 500; color: var(--accent); background: var(--accent-bg); padding: 6px 16px; border-radius: 100px; }
+
+        .deliverables { padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .del-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .del-card { background: var(--stone-100); border-radius: 10px; padding: 24px; }
+        .del-card-title { font-weight: 600; font-size: 15px; color: var(--stone-900); margin-bottom: 6px; }
+        .del-card-desc { font-size: 14px; color: var(--stone-600); line-height: 1.5; }
+
+        .ideal-for { padding: 48px 24px; background: var(--stone-50); }
+        .ideal-inner { max-width: 720px; margin: 0 auto; }
+        .ideal-desc { font-size: 16px; color: var(--stone-600); line-height: 1.7; max-width: 560px; }
+
+        .about { padding: 80px 24px; background: var(--stone-100); }
+        .about-inner { max-width: 720px; margin: 0 auto; }
+        .about p { color: var(--stone-600); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+
+        .cta-section { padding: 80px 24px; text-align: center; background: var(--stone-900); }
+        .cta-section h2 { color: var(--stone-50); margin-bottom: 16px; }
+        .cta-section p { color: var(--stone-400); font-size: 16px; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-main { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color: white; background: var(--accent); padding: 18px 40px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+        .cta-main:hover { background: #2563eb; transform: translateY(-2px); }
+        .cta-note { color: var(--stone-400); font-size: 13px; margin-top: 16px; }
+
+        footer { padding: 32px 24px; text-align: center; font-size: 13px; color: var(--stone-400); background: var(--stone-900); border-top: 1px solid var(--stone-800); }
+
+        @media (max-width: 640px) {
+            .stat-bar-inner { grid-template-columns: 1fr; gap: 24px; }
+            .del-grid { grid-template-columns: 1fr; }
+            .nav-link { display: none; }
+        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-badge { animation: fadeUp 0.6s ease 0.1s both; }
+        .hero h1 { animation: fadeUp 0.6s ease 0.2s both; }
+        .hero-body { animation: fadeUp 0.6s ease 0.35s both; }
+        .hero-cta { animation: fadeUp 0.6s ease 0.5s both; }
+    </style>
+</head>
+<body>
+<nav><div class="nav-name">Don Crowley</div><div class="nav-links"><a href="landing-page-a-coaching.html" class="nav-link">1:1 Coaching</a><a href="landing-page-b-cohort.html" class="nav-link">Cohorts</a><a href="#book" class="nav-cta">Book a Call</a></div></nav>
+
+<section class="hero">
+    <span class="hero-badge">AI Readiness Sprint</span>
+    <h1>Get your leadership team <em>aligned on AI in two days.</em></h1>
+    <p class="hero-body">A focused intensive for your leadership team. You arrive with uncertainty. You leave with a strategy, a pilot plan, and a team that knows what to do next.</p>
+    <a href="#book" class="hero-cta">Book a free 15-minute call <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg></a>
+    <p class="hero-meta">2-day intensive. Up to 8 leaders. Includes pre-work and 30-day follow-up.</p>
+</section>
+
+<section class="stat-bar"><div class="stat-bar-inner">
+    <div class="stat-item"><div class="stat-number">52%</div><div class="stat-label">of AI usage in businesses is limited<br>to emails and document drafts</div></div>
+    <div class="stat-item"><div class="stat-number">61%</div><div class="stat-label">of senior leaders rate themselves<br>as AI beginners</div></div>
+    <div class="stat-item"><div class="stat-number">2 days</div><div class="stat-label">to go from scattered experiments<br>to a clear plan</div></div>
+</div></section>
+
+<section class="problem">
+    <div class="section-tag">The Situation</div>
+    <h2>Your leadership team is not aligned. That is the real blocker.</h2>
+    <ul class="pain-list">
+        <li>Different leaders have different views on AI. Some are enthusiastic. Some are sceptical. Nobody is sure who is right.</li>
+        <li>People across the business are experimenting individually. There is no shared direction and no way to tell what is working.</li>
+        <li>You have had the AI conversation three times already. It ends the same way: "We should do something." Then nothing happens.</li>
+        <li>You need the entire leadership team in the room, making real decisions, with a plan they all own when they walk out.</li>
+    </ul>
+</section>
+
+<section class="timeline"><div class="timeline-inner">
+    <div class="section-tag">How the Sprint Works</div>
+    <h2>Three phases. One clear outcome.</h2>
+    <p class="timeline-intro">The sprint is designed to move fast and produce something you can act on immediately. No theory. No slides. Just decisions.</p>
+    <div class="phase-grid">
+        <div class="phase">
+            <div class="phase-header"><span class="phase-tag">Pre-work</span><span class="phase-when">1-2 weeks before</span></div>
+            <div class="phase-title">Assessment and preparation</div>
+            <div class="phase-desc">Each leader completes a short AI readiness questionnaire. I review your tech stack, team structure, and current AI usage. I interview 2-3 key people to understand the real situation. You arrive on Day 1 with a clear picture of where you stand.</div>
+        </div>
+        <div class="phase">
+            <div class="phase-header"><span class="phase-tag">Day 1</span><span class="phase-when">Full day with leadership team</span></div>
+            <div class="phase-title">Audit and prioritise</div>
+            <div class="phase-desc">Morning: we walk through the assessment results together. Every leader sees the same picture for the first time. We map AI usage across the business and name the real blockers. Afternoon: we score your top workflows for AI potential. By the end of the day, the team has agreed on 2-3 areas to focus on first.</div>
+        </div>
+        <div class="phase">
+            <div class="phase-header"><span class="phase-tag">Day 2</span><span class="phase-when">Full day with leadership team</span></div>
+            <div class="phase-title">Plan and commit</div>
+            <div class="phase-desc">Morning: I demonstrate what AI-assisted work looks like in your chosen focus areas, using your actual business context. Afternoon: we build the 30-day pilot plan together. Who does what. How you will measure it. What success looks like. Every leader leaves with a clear role and a specific commitment.</div>
+        </div>
+        <div class="phase">
+            <div class="phase-header"><span class="phase-tag">Follow-up</span><span class="phase-when">30 days after</span></div>
+            <div class="phase-title">Review and adjust</div>
+            <div class="phase-desc">One month later, we reconvene for a 90-minute session. We review the pilot results, fix what needs fixing, and build the 90-day roadmap for the next phase of adoption. This session is included in the sprint price.</div>
+        </div>
+    </div>
+</div></section>
+
+<section class="pricing-anchor">
+    <div class="price">From EUR 8,000</div>
+    <div class="price-note">Includes pre-work assessment, 2-day intensive, all materials, and 30-day follow-up session</div>
+    <div class="price-founding">Founding client rate: EUR 6,000 (in exchange for a case study)</div>
+</section>
+
+<section class="deliverables">
+    <div class="section-tag">What Your Team Walks Away With</div>
+    <h2>Not a report. A plan your team built together.</h2>
+    <div class="del-grid">
+        <div class="del-card"><div class="del-card-title">AI readiness assessment</div><div class="del-card-desc">A clear snapshot of where your organisation stands today, benchmarked against the study data.</div></div>
+        <div class="del-card"><div class="del-card-title">Prioritised opportunity map</div><div class="del-card-desc">Your workflows scored for AI potential. The team's agreed starting points, not a consultant's recommendation.</div></div>
+        <div class="del-card"><div class="del-card-title">30-day pilot plan</div><div class="del-card-desc">Who does what, when, and how you will measure it. A plan built by the people who will run it.</div></div>
+        <div class="del-card"><div class="del-card-title">90-day roadmap</div><div class="del-card-desc">Built at the follow-up session. The bridge from pilot to sustained adoption across the business.</div></div>
+    </div>
+</section>
+
+<section class="ideal-for"><div class="ideal-inner">
+    <div class="section-tag">Is This Right For You?</div>
+    <h2>Built for leadership teams, not individuals.</h2>
+    <p class="ideal-desc">This works best for companies with 50 to 250 employees where the leadership team of 4 to 8 people needs to get aligned on AI quickly. If you have been having the "we should do something about AI" conversation for months without progress, this sprint is designed to break that pattern in two days.</p>
+</div></section>
+
+<section class="about"><div class="about-inner">
+    <div class="section-tag">Your Facilitator</div>
+    <h2>Don Crowley</h2>
+    <p>I have spent years helping leadership teams navigate change. I have seen the difference between a strategy that sits in a drawer and one that actually reshapes how people work.</p>
+    <p>The sprint is designed to produce the second kind. Not because I have all the answers, but because your team already knows more than they think. My job is to create the structure, ask the right questions, and make sure you leave with something you can act on immediately.</p>
+</div></section>
+
+<section class="cta-section" id="book">
+    <h2>Get your leadership team<br>aligned on AI.</h2>
+    <p>Book a free 15-minute call. We will talk about your situation and whether the sprint is the right format for your team.</p>
+    <a href="https://calendly.com/YOUR-LINK" class="cta-main">Book Your Free Call</a>
+    <div class="cta-note">15 minutes. No pitch. We will figure out if this fits.</div>
+</section>
+<footer>&copy; 2026 Don Crowley. All rights reserved.</footer>
+</body>
+</html>
