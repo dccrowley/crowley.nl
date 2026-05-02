@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive AI Coaching | Don Crowley</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --stone-50: #fafaf9; --stone-100: #f5f5f4; --stone-200: #e7e5e4;
+            --stone-400: #a8a29e; --stone-500: #78716c; --stone-600: #57534e;
+            --stone-700: #44403c; --stone-800: #292524; --stone-900: #1c1917;
+            --accent: #b45309; --accent-light: #d97706;
+            --accent-bg: #fef3c7; --accent-subtle: #fffbeb;
+            --font-serif: 'IBM Plex Serif', Georgia, serif;
+            --font-sans: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); color: var(--stone-800); background: var(--stone-50); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(250,250,249,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--stone-200); }
+        .nav-name { font-family: var(--font-serif); font-size: 20px; color: var(--stone-900); font-weight: 400; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-link { font-size: 14px; color: var(--stone-500); text-decoration: none; transition: color 0.2s; }
+        .nav-link:hover { color: var(--stone-800); }
+        .nav-cta { font-size: 14px; font-weight: 500; color: var(--stone-50); background: var(--stone-900); padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+        .nav-cta:hover { background: var(--stone-700); }
+
+        .hero { padding: 140px 24px 80px; max-width: 720px; margin: 0 auto; }
+        .hero-badge { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--accent-bg); padding: 6px 14px; border-radius: 100px; margin-bottom: 28px; }
+        .hero h1 { font-family: var(--font-serif); font-size: clamp(34px, 5.5vw, 50px); line-height: 1.15; color: var(--stone-900); letter-spacing: -0.01em; margin-bottom: 24px; font-weight: 400; }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-body { font-size: 18px; color: var(--stone-600); line-height: 1.7; max-width: 560px; margin-bottom: 36px; }
+        .hero-cta { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; color: var(--stone-50); background: var(--stone-900); padding: 16px 32px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+        .hero-cta:hover { background: var(--accent); transform: translateY(-1px); }
+        .hero-cta svg { width: 18px; height: 18px; }
+        .hero-meta { margin-top: 20px; font-size: 14px; color: var(--stone-400); }
+
+        .stat-bar { background: var(--stone-900); padding: 48px 24px; }
+        .stat-bar-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+        .stat-number { font-family: var(--font-mono); font-size: clamp(34px, 5vw, 46px); font-weight: 500; color: var(--accent-light); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 14px; color: var(--stone-400); line-height: 1.4; }
+
+        .section-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+        section h2 { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 36px); line-height: 1.2; color: var(--stone-900); letter-spacing: -0.01em; margin-bottom: 24px; font-weight: 400; }
+
+        .problem { padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .pain-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .pain-list li { position: relative; padding-left: 28px; font-size: 16px; color: var(--stone-700); line-height: 1.65; }
+        .pain-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-bg); border: 2px solid var(--accent); }
+
+        .programme { padding: 80px 24px; background: var(--stone-100); }
+        .programme-inner { max-width: 720px; margin: 0 auto; }
+        .programme-intro { color: var(--stone-600); font-size: 17px; margin-bottom: 48px; max-width: 560px; }
+        .session-grid { display: grid; gap: 2px; }
+        .session { background: var(--stone-50); padding: 28px 32px; display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: start; transition: background 0.2s; }
+        .session:first-child { border-radius: 10px 10px 0 0; }
+        .session:last-child { border-radius: 0 0 10px 10px; }
+        .session:hover { background: white; }
+        .session-num { font-family: var(--font-mono); font-size: 24px; color: var(--accent); line-height: 1; padding-top: 2px; font-weight: 500; }
+        .session-title { font-weight: 600; font-size: 15px; color: var(--stone-900); margin-bottom: 6px; }
+        .session-desc { font-size: 15px; color: var(--stone-600); line-height: 1.55; }
+
+        .pricing-anchor { padding: 48px 24px; text-align: center; background: var(--accent-subtle); border-top: 1px solid var(--accent-bg); border-bottom: 1px solid var(--accent-bg); }
+        .price { font-family: var(--font-mono); font-size: 40px; color: var(--stone-900); font-weight: 500; }
+        .price-note { font-size: 15px; color: var(--stone-500); margin-top: 8px; }
+        .price-founding { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 500; color: var(--accent); background: var(--accent-bg); padding: 6px 16px; border-radius: 100px; }
+
+        .outcomes { padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .outcome-card { background: var(--stone-100); border-radius: 10px; padding: 24px; }
+        .outcome-card-title { font-weight: 600; font-size: 15px; color: var(--stone-900); margin-bottom: 6px; }
+        .outcome-card-desc { font-size: 14px; color: var(--stone-600); line-height: 1.5; }
+
+        .about { padding: 80px 24px; background: var(--stone-100); }
+        .about-inner { max-width: 720px; margin: 0 auto; }
+        .about p { color: var(--stone-600); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+
+        .cta-section { padding: 80px 24px; text-align: center; background: var(--stone-900); }
+        .cta-section h2 { color: var(--stone-50); margin-bottom: 16px; }
+        .cta-section p { color: var(--stone-400); font-size: 16px; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .cta-main { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; color: var(--stone-900); background: var(--accent-light); padding: 18px 40px; border-radius: 6px; text-decoration: none; transition: all 0.25s; }
+        .cta-main:hover { background: #fbbf24; transform: translateY(-2px); }
+        .cta-note { color: var(--stone-400); font-size: 13px; margin-top: 16px; }
+
+        footer { padding: 32px 24px; text-align: center; font-size: 13px; color: var(--stone-400); background: var(--stone-900); border-top: 1px solid var(--stone-800); }
+
+        @media (max-width: 640px) {
+            .stat-bar-inner { grid-template-columns: 1fr; gap: 24px; }
+            .outcome-grid { grid-template-columns: 1fr; }
+            .session { grid-template-columns: 36px 1fr; padding: 24px 20px; gap: 16px; }
+            .nav-link { display: none; }
+        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-badge { animation: fadeUp 0.6s ease 0.1s both; }
+        .hero h1 { animation: fadeUp 0.6s ease 0.2s both; }
+        .hero-body { animation: fadeUp 0.6s ease 0.35s both; }
+        .hero-cta { animation: fadeUp 0.6s ease 0.5s both; }
+    </style>
+</head>
+<body>
+<nav><div class="nav-name">Don Crowley</div><div class="nav-links"><a href="landing-page-b-cohort.html" class="nav-link">Cohorts</a><a href="landing-page-c-sprint.html" class="nav-link">Sprints</a><a href="#book" class="nav-cta">Book a Call</a></div></nav>
+
+<section class="hero">
+    <span class="hero-badge">1:1 Executive Coaching</span>
+    <h1>Stop guessing. Start leading <em>your team through AI.</em></h1>
+    <p class="hero-body">A 6-week programme built entirely around your business, your decisions, and your team. You will finish with a clear AI strategy and the confidence to act on it.</p>
+    <a href="#book" class="hero-cta">Book a free 15-minute call <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg></a>
+    <p class="hero-meta">6 sessions. 90 minutes each. Built around your real work.</p>
+</section>
+
+<section class="stat-bar"><div class="stat-bar-inner">
+    <div class="stat-item"><div class="stat-number">61%</div><div class="stat-label">of senior leaders rate themselves<br>as AI beginners</div></div>
+    <div class="stat-item"><div class="stat-number">52%</div><div class="stat-label">of AI usage is limited to<br>emails and drafts</div></div>
+    <div class="stat-item"><div class="stat-number">35%</div><div class="stat-label">of executives prefer<br>1:1 coaching</div></div>
+</div></section>
+
+<section class="problem">
+    <div class="section-tag">Sound Familiar?</div>
+    <h2>You know AI matters. You are not sure what to do about it.</h2>
+    <ul class="pain-list">
+        <li>Your team is using ChatGPT for emails and first drafts. Nobody knows if that is enough or a distraction.</li>
+        <li>You attended a webinar or two. It was interesting. Nothing changed on Monday morning.</li>
+        <li>A competitor mentioned their "AI-powered" service. You are not sure what is real and what is noise.</li>
+        <li>You do not need a tool demo. You need someone to help you think clearly about what AI means for your specific business.</li>
+    </ul>
+</section>
+
+<section class="programme"><div class="programme-inner">
+    <div class="section-tag">The Programme</div>
+    <h2>Six weeks to AI confidence</h2>
+    <p class="programme-intro">Every session is personalised to your business. No generic frameworks. No slides. Just the decisions that matter to you.</p>
+    <div class="session-grid">
+        <div class="session"><div class="session-num">1</div><div><div class="session-title">Where are you now?</div><div class="session-desc">An honest audit of how your business uses AI today. We map reality, not aspiration.</div></div></div>
+        <div class="session"><div class="session-num">2</div><div><div class="session-title">Where should you focus first?</div><div class="session-desc">We score your real workflows for AI potential and pick the highest-impact starting point.</div></div></div>
+        <div class="session"><div class="session-num">3</div><div><div class="session-title">What does good look like?</div><div class="session-desc">Live demonstration using your actual business context. Not a product demo. Your real work.</div></div></div>
+        <div class="session"><div class="session-num">4</div><div><div class="session-title">Your team and the change</div><div class="session-desc">Who needs to change what. How to communicate it. A pilot plan with clear roles.</div></div></div>
+        <div class="session"><div class="session-num">5</div><div><div class="session-title">Running the pilot</div><div class="session-desc">We review what happened, fix blockers, and refine the approach with real data.</div></div></div>
+        <div class="session"><div class="session-num">6</div><div><div class="session-title">The path forward</div><div class="session-desc">A 90-day roadmap for continued adoption. Clear goals, a plan, and the confidence to own it.</div></div></div>
+    </div>
+</div></section>
+
+<section class="pricing-anchor">
+    <div class="price">EUR 6,000</div>
+    <div class="price-note">6 sessions over 6 weeks, plus onboarding assessment and 30-day follow-up call</div>
+    <div class="price-founding">Founding client rate available: EUR 4,000</div>
+</section>
+
+<section class="outcomes">
+    <div class="section-tag">What You Walk Away With</div>
+    <h2>Not a certificate. A strategy you can act on.</h2>
+    <div class="outcome-grid">
+        <div class="outcome-card"><div class="outcome-card-title">A current-state map</div><div class="outcome-card-desc">Clear picture of how AI is being used across your business today, and where the gaps are.</div></div>
+        <div class="outcome-card"><div class="outcome-card-title">A prioritised focus area</div><div class="outcome-card-desc">One or two high-impact areas where AI will make a measurable difference first.</div></div>
+        <div class="outcome-card"><div class="outcome-card-title">A tested pilot</div><div class="outcome-card-desc">A real change, run with your team, with results you can see and share.</div></div>
+        <div class="outcome-card"><div class="outcome-card-title">A 90-day roadmap</div><div class="outcome-card-desc">A plan for continued adoption that does not depend on you hiring a consultant again.</div></div>
+    </div>
+</section>
+
+<section class="about"><div class="about-inner">
+    <div class="section-tag">Your Guide</div>
+    <h2>Don Crowley</h2>
+    <p>I have spent years helping organisations navigate change at the intersection of technology, people, and process. I have seen what moves the needle and what becomes expensive shelf-ware.</p>
+    <p>I do not teach AI tools. I help leaders build the confidence to make clear decisions about AI in their business. Your team does not need you to become a prompt engineer. They need you to set direction, remove blockers, and go first.</p>
+</div></section>
+
+<section class="cta-section" id="book">
+    <h2>Ready to lead your team<br>through AI adoption?</h2>
+    <p>Book a free 15-minute call. No pitch, no pressure. We will talk about where you are and whether this makes sense for you.</p>
+    <a href="https://calendly.com/YOUR-LINK" class="cta-main">Book Your Free Call</a>
+    <div class="cta-note">15 minutes. Video or phone. No obligation.</div>
+</section>
+<footer>&copy; 2026 Don Crowley. All rights reserved.</footer>
+</body>
+</html>
