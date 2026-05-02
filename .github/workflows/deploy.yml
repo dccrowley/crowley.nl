@@ -16,7 +16,7 @@ jobs:
           DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
         run: |
           sudo apt-get install -y lftp
-          lftp -u crowleynl,"$DEPLOY_PASSWORD" sftp://ftp.crowley.nl <<EOF
+          lftp -u "19989-cl-d2605cc","$DEPLOY_PASSWORD" sftp://ftp.crowley.nl <<EOF
           set sftp:auto-confirm yes
           set net:timeout 10
           mirror --reverse --delete --verbose \
